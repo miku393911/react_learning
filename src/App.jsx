@@ -16,7 +16,7 @@ import "./style.css";
     setCount(count+1)
   )
   return(
-    <button onClick={onClick}>Click! {count}</button>
+    <button onClick={onClick}>{count}</button>
   )
 }*/
 
@@ -26,7 +26,7 @@ import "./style.css";
 *   **ヒント:** boolean値 (`true`/`false`) を使います。*/
 /*export function App (){
   const [toggle, setToggle] = useState(true);
-  return ( //変数として挙動を書かずに、そのまま代入する　ボタンが押されるたび、スイッチの入れ替え（！で反転も可能）
+  return ( //変数として挙動を書かずに、そのまま代入する　ボタンが押されるたび、スイッチの入れ替え（！で反転、有無を判定
     <button onClick={ ()=> setToggle(!toggle) }>{toggle ? "ON" : "OFF"}</button> //実際に表示される文字は、三項演算子で簡単に
   )
 }*/
@@ -34,13 +34,74 @@ import "./style.css";
 /*### Q3. 入力ミラーリング (イベント)
 テキストボックスに入力した文字が、そのすぐ下にリアルタイムで表示されるようにしてください。
 *   **Hooks:** `useState`*/
-export function App (){
+/*export function App (){
   const [text, setText] = useState("");
   return (
-    <> 
-      <input type="text" value={text} /*valueと書くことでtextとの関係を密接にできる*/ onChange={(e)=> setText(e.target.value)} placeholder="入力してください" /> 
+    <> //value={}はuseStateの第1引数と一致させる
+      <input type="text" value={text} onChange={(e)=> setText(e.target.value)} placeholder="入力してください" /> 
       <p>入力された文字👇</p>
       <p className="text">{text}</p>
+    </>
+  )
+}*/
+
+/*### Q4. FizzBuzzカウンター (ロジック)
+Q1のカウンターを改造し、数字の横に以下のルールで文字を表示してください。
+*   3の倍数: "Fizz"
+*   5の倍数: "Buzz"
+*   15の倍数: "FizzBuzz"
+*   それ以外: 表示なし
+*   **Hooks:** `useState`*/
+/*export function App (){
+  const [count, setCount] = useState(0);
+  return ( //FizzBuzz関数は通常1から始まることが多い、今回はカウントを元にしているので0から始まる
+    <button onClick={ () => {setCount(count + 1)} }>{count} {(count===0)? "" : (count%3===0 && count%5===0)? "FizzBuzz" : ((count%3===0)? "Fizz" : (count%5===0)? "Buzz" : "")}</button>
+  )
+}*/
+
+/*### Q5. 偶数・奇数判定 (ロジック)
+数字を入力できるフォームを作り、入力された数字が「偶数」か「奇数」かを判定して表示してください。
+*   **Hooks:** `useState`*/
+/*export function App (){
+   const [number, setNumber] = useState("");
+   return (
+    <>
+      <input value={number} onChange={ (e) => setNumber(e.target.value)} placeholder="数字を入力してください" />
+      <p>判定結果👇</p>
+      <p>{number === "" ? "" : (number%2===0 ? "偶数" : "奇数")}</p>
+    </>
+   ) //データを取得する場所と、結果を返す場所で書く場所を分ける　value={}はuseStateの第1引数と一致させる
+}*/
+
+/*### Q6. ログインステータス (条件付きレンダリング)
+「ログイン」ボタンと「ログアウト」ボタンを用意します。
+*   ログイン中: 「ようこそ！ユーザーさん」と表示し、「ログアウト」ボタンだけ表示。
+*   ログアウト中: 「ログインしてください」と表示し、「ログイン」ボタンだけ表示。
+*   **Hooks:** `useState`*/
+/*export function App (){
+  const [login, setLogin] = useState(false);
+  return (
+    <>
+      {login ? (<> <p>ようこそ！ユーザーさん</p>
+      <button onClick={ ()=>{ setLogin(!login) }}>ログアウトボタン</button> </>) :
+      (<> <p>ログインしてください</p>
+      <button onClick={ ()=>{ setLogin(!login) }}>ログインボタン</button> </>)
+      }
+    </>
+  )
+}*/
+
+/*### Q7. 最大値トラッカー (ロジック)
+数値入力欄と「更新」ボタンがあります。
+これまでに入力された数値の中で、**最大の数値**だけを常に表示し続けるコンポーネントを作ってください。
+*   **Hooks:** `useState`*/
+export function App (){
+  const [current, setCurrent] = useState("");  //現在の入力された値を保存
+  const [muxNumber, setMuxNumber] = useState(0);  //最大値を保存
+  const onClickToggle = () => {}
+  return (
+    <>
+      <button>更新</button>
     </>
   )
 }
