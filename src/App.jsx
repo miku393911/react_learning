@@ -95,13 +95,57 @@ Q1のカウンターを改造し、数字の横に以下のルールで文字を
 数値入力欄と「更新」ボタンがあります。
 これまでに入力された数値の中で、**最大の数値**だけを常に表示し続けるコンポーネントを作ってください。
 *   **Hooks:** `useState`*/
-export function App (){
+/*export function App (){
   const [current, setCurrent] = useState("");  //現在の入力された値を保存
-  const [muxNumber, setMuxNumber] = useState(0);  //最大値を保存
-  const onClickToggle = () => {}
-  return (
+  const [maxNumber, setMaxNumber] = useState(0);  //最大値を保存
+  return ( //useState()は状態の管理に応じて複数書いてOK!
     <>
-      <button>更新</button>
+      <input value={current} onChange={ (e) => setCurrent(e.target.value)} placeholder="数値を入力してください" />
+      <button onClick={ () => {(Number(current)) > maxNumber ? setMaxNumber(Number(current)) : setMaxNumber(maxNumber)}}>更新</button>
+      <p>最大値を表示: {maxNumber}</p>
     </>
   )
+}*/
+
+/*### Q8. 成績判定 (条件分岐)
+点数（0~100）を入力すると、以下の評価を表示してください。
+*   80以上: "A判定"
+*   70以上: "B判定"
+*   60以上: "C判定"
+*   それ以外: "D判定"
+*   **Hooks:** `useState`*/
+/*export function App (){
+  const [score, setScore] = useState("");
+  return (
+    <>
+      <input type="text" value={score} onChange={ (e) => setScore(e.target.value)} placeholder="数値を入力してください" />
+      <p>評価: {(score === "") ? "" : (score >= 80) ? "A判定" : (score >= 70) ? "B判定" : (score >= 60) ? "C判定" : "D判定"}</p>
+    </>
+  ) //scoreは文字列なので、Number()で囲むと更に良い
+}*/
+
+/*### Q9. 背景色スイッチャー (Switch文ロジック)
+セレクトボックス（ドロップダウン）で「赤」「青」「緑」を選択できるようにします。
+選択した色に合わせて、画面（またはボックス）の背景色を変更してください。
+*   **Hooks:** `useState`*/
+export function App (){
+  const [color, setColor] = useState("");
+  const bgcolor = () => {
+     switch(color){
+      case "赤" : return "pink";  //値を返してあげる
+      case "青" : return "lightblue";
+      case "緑" : return "lightgreen";
+      default : return "white";  //デフォルトの状態も書いてあげる
+  }}
+  return ( //全体にstyleを定義する（最初のreturn内の<div>タグに適用させる / 定義したかたまりごと呼び出してもOK
+    <div style={{backgroundColor: bgcolor(), width: "155px", height: "25px", borderRadius: "5px"}}>
+      <select name="color" onChange={ (e) => setColor(e.target.value)}>
+        <option value="">-- 選択してください --</option>
+        <option value="赤">赤</option>
+        <option value="青">青</option>
+        <option value="緑">緑</option>
+      </select>
+    </div>
+    )
 }
+
