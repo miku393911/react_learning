@@ -7,10 +7,8 @@
 ### Q1. カウンター (基本)
 ボタンをクリックすると数字が1ずつ増えるカウンターを作ってください。
 *   **Hooks:** `useState`*/
-import { use, useState } from "react"
+import { useState, useTransition } from "react"
 import "./style.css";
-import { flushSync } from "react-dom";
-import { preprocessCSS } from "vite";
 /*export function App (){
   const [count, setCount] = useState(0);
   const onClick = ( () =>  //先に変数として挙動を書いて、のちにその変数を呼び出すみたいな
@@ -191,31 +189,93 @@ export function App (){
 /*### Q12. ユーザーカード (コンポーネント分割)
 `UserCard` というコンポーネントを作り、親コンポーネントから名前と年齢をPropsで渡して表示してください。
 親コンポーネントでは配列データを `map` し、`UserCard` を繰り返し表示してください。*/
-export function UserCard(props){
+/*function UserCard(props){
   return (
-    <li>名前: {props.name}（年齢: {props.age}歳）</li>
+    <li>名前: {props.name}（年齢: {props.age}歳）</li> //UserCardは渡された情報をそのまま表示する役割
   )
 }
-function App (){
+export function App (){
   const users = [
     {name: "大谷", age: 17},
     {name: "小泉", age: 18},
   ]
   return (
     <>
-      <ul>
-        {users.map((user) => {
-          return <UserCard name={user.name} age={user.age}/>
-        })}
-      </ul>
+      <ul> //データを持っていて、.map()メソッドを使って全員分表示する
+        {users.map((user) => { return <UserCard key={user.name} name={user.name} age={user.age} /> })} 
+      </ul>  
+      //name={}やage={}の命名は、UserCardコンポーネントを作る時に決めた名前だということ
     </>
-  )
-}
+  ) 
+}*/ /*<li>タグを作る感じで、.map()メソッドで回し、引数を取る（returnでUserCardコンポーネントごと返す/その中に引数として配列のデータを渡せるようにする）*/
 
 /*### Q13. アクティブユーザーのみ表示 (filter)
 ユーザーの配列（`{name: "...", isActive: true/false}`）があります。
 チェックボックス「アクティブのみ表示」を用意し、チェックが入っている時は `isActive: true` のユーザーだけを表示してください。
 *   **Hooks:** `useState`*/
 /*export function App (){
-
+  const [isActive, setIsActive] = useState(true);
+  const users = [
+    {name: "miku", isActive: true},
+    {name: "yuka", isActive: true},
+    {name: "yuuta", isActive: false}
+  ]  //まず.filter()メソッドで条件を絞り込む
+  const filterUsers = users.filter( (user) => { //return trueで通す、return falseで通さないみたいなイメージ
+    if(isActive){ //まずisActiveを見て、trueの人を残す / if(isActive === true)と書いてもOK
+      return user.isActive === true;  //trueだけを返す
+    }else{
+      return true;  //全部返す
+    } //checked属性を書き、isActiveが権限を握るように書いてあげる！
+  });
+  return (
+    <> 
+      <input type="checkbox" checked={isActive} onChange={ () => setIsActive(!isActive) } /> 
+      <ul>
+        { filterUsers.map( (user) => <li key={user.name}>{user.name}</li> )}
+      </ul>
+    </>
+  )
 }*/
+
+/*### Q14. ユーザー検索 (filter/includes)
+検索ボックスに入力した文字が名前に含まれるユーザーだけをリアルタイムで絞り込んで表示してください。
+*   **Hooks:** `useState`*/
+/*export function App (){
+  const [text, setText] = useState("");
+  const userDate = [
+    {name: "miku", age: 24},
+    {name: "yuka", age: 30},
+    {name: "yuuta", age: 27}
+  ] //.toLowerCase()は関数、引数userとオブジェクトのnameを調べるからuser.name、inputのtextに含まれているかどうかを調べる
+  const filterUsers = userDate.filter( (user) => { return user.name.toLocaleLowerCase().includes(text) });
+  return (
+    <>
+      <input type="text" value={text} onChange={(e) => setText(e.target.value)} placeholder="入力してください"  />
+      <ul>
+        {filterUsers.map( (user) => <li key={user.name}>{user.name}</li>)}
+      </ul>
+    </>
+  )
+}*/
+
+/*### Q15. 特定のユーザーを探す (find)
+IDを入力して「検索」ボタンを押すと、該当するIDのユーザーの名前を表示してください。見つからない場合は「見つかりません」と表示します。
+*   **Hooks:** `useState`*/
+export function App (){
+  const [text, setText] = useState("");
+  const userDate = [
+    {id: 1, name: "miku", age: 24},
+    {id: 2, name: "yuka", age: 30},
+    {id: 3, name: "yuuta", age: 27},
+  ]
+  const findUser = userDate.find( (user) => user.id ? user.name : "見つかりませんでした" );
+  return (
+    <>
+      <input type="text" onChange={ (e) => setText(e.target.value)} />
+      <button>検索</button>
+      <ul>
+        {findUser.map( (user) => <li key={user.name}>{user.name}</li>)}
+      </ul>
+    </>
+  )
+}
