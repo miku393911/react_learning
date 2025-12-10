@@ -262,20 +262,27 @@ export function App (){
 IDを入力して「検索」ボタンを押すと、該当するIDのユーザーの名前を表示してください。見つからない場合は「見つかりません」と表示します。
 *   **Hooks:** `useState`*/
 export function App (){
-  const [text, setText] = useState("");
+  const [text, setText] = useState("");  //入力の状態管理
+  const [result, setResult] = useState("");  //結果表示の状態管理
   const userDate = [
     {id: 1, name: "miku", age: 24},
     {id: 2, name: "yuka", age: 30},
     {id: 3, name: "yuuta", age: 27},
   ]
-  const findUser = userDate.find( (user) => user.id ? user.name : "見つかりませんでした" );
-  return (
+  const foundUsers = userDate.find( (user) => user.id == Number(text));  //===（厳密等価演算子）にして型を合わせるか、==（等価演算子）にして型を気にしないで済むようにするか
+  return ( //findは条件に合う1つを連れてくるだけ、1つのオブジェクトごと連れてくるので.mapで配列全体を把握する必要がない
     <>
-      <input type="text" onChange={ (e) => setText(e.target.value)} />
-      <button>検索</button>
-      <ul>
-        {findUser.map( (user) => <li key={user.name}>{user.name}</li>)}
+      <input type="text" value={text} onChange={(e) => setText(e.target.value)} placeholder="IDを入力してください" />
+      <button onClick={() => setResult(foundUsers ? foundUsers.name : "見つかりませんでした")}>検索</button>
+      <ul> 
+        検索結果： {result}
       </ul>
     </>
-  )
+  )  //foundUsersで絞り込んだデータの中から表示するという限定的な使い方ができる
 }
+
+/*### Q16. TODOリスト・追加 (配列のState更新)
+テキストボックスと「追加」ボタンを作り、TODOリストに新しい項目を追加できるようにしてください。
+*   **Hooks:** `useState` (配列)
+*   **ヒント:** `setTodos([...todos, newItem])`*/
+
