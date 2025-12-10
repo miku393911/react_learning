@@ -324,7 +324,7 @@ Q16のリストの各項目に「削除」ボタンを追加し、押された�
 ボタンを押すと、その記事の「いいね数」が1増えるようにしてください。
 *   **Hooks:** `useState`
 *   **ヒント:** `map` を使って特定のIDのオブジェクトだけ更新した新しい配列を作ります。*/
-export function App (){
+/*export function App (){
   const [articles, setArticles] = useState([ //初期値に配列やオブジェクトを挿入することもできた！
     {id:1, data: "記事1", likes: 0},
     {id:2, data: "記事2", likes: 0},
@@ -339,5 +339,18 @@ export function App (){
     </ul>
     </>
   )
+}*/
+export function App (){
+  const Articles = [
+    {id:1, data: "記事1"},
+    {id:2, data: "記事2"},
+    {id:3, data: "記事3"}
+  ]
+  return (
+    <ul>
+      {Articles.map((article) => 
+        <ArticleItem key={article.id} data={article.data} />
+      )}
+    </ul>
+  )
 }
-
