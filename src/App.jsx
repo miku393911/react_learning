@@ -284,8 +284,12 @@ IDを入力して「検索」ボタンを押すと、該当するIDのユーザ�
 /*### Q16. TODOリスト・追加 (配列のState更新)
 テキストボックスと「追加」ボタンを作り、TODOリストに新しい項目を追加できるようにしてください。
 *   **Hooks:** `useState` (配列)
-*   **ヒント:** `setTodos([...todos, newItem])`*/
-/*export function App (){
+*   **ヒント:** `setTodos([...todos, newItem])`
+## Q17. TODOリスト・削除 (filterによる削除)
+Q16のリストの各項目に「削除」ボタンを追加し、押された項目をリストから削除してください。
+*   **Hooks:** `useState`
+*   **ヒント:** `filter` を使って、削除したいID以外の新しい配列を作ります。*/
+export function App (){
   const [newItem, setNewItem] = useState("");  //入力された文字を保存するため
   const [todos, setTodos] = useState([]);  //追加した後の状態（リスト全体の状態）、初期値が配列じゃないと.map()メソッドが適用されない
   const onClickAdd = () => {
@@ -295,21 +299,23 @@ IDを入力して「検索」ボタンを押すと、該当するIDのユーザ�
     setTodos([...todos, newItem]);
     setNewItem("");  //入力欄を空白に戻す
   }
+  const onClickRemove = (deletedIndex) => {//deletedIndexはリストの中の何番めを消すかを判定するために必要
+    const newTodos = [...todos];  //新しい配列を自動で作るので事前のコピー（この行）は不要
+    setTodos(newTodos.filter( (_, index) => index !== deletedIndex));  //残したい人だけ選ぶt、odoは使わないので、_で表しても良いらしい！
+  } //indexを第二引数に取ることで、同じ文字を追加した際もきちんと判別ができる
   return (
     <>
       <input type="text" value={newItem} onChange={ (e) => setNewItem(e.target.value)} placeholder="入力してください" />
       <button onClick={onClickAdd}>追加</button>
       <ul>
-        追加リスト👇 {todos.map( (todo) => <li key={todo}>{todo}</li>)}
+        リスト👇 {todos.map( (todo, index) => 
+        <li key={index}>
+          {todo}
+          <button onClick={ () => onClickRemove(index)}>削除</button>
+        </li>
+        )}
       </ul>
     </>
-  )
-}*/
-
-/*### Q17. TODOリスト・削除 (filterによる削除)
-Q16のリストの各項目に「削除」ボタンを追加し、押された項目をリストから削除してください。
-*   **Hooks:** `useState`
-*   **ヒント:** `filter` を使って、削除したいID以外の新しい配列を作ります。*/
-export function App (){
-  
+  ) //アロー関数でindexを削除することを実行できるようにする
 }
+
