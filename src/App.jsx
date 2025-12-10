@@ -1,3 +1,5 @@
+import { useState } from "react";
+import "./style.css";
 /* # React 実践練習問題集 (全30問)
 学習した「1枚目の画像（ロジック・条件分岐）」と「3枚目の画像（配列・コールバック）」の内容をベースに、Reactの `useState` と `useEffect` を使って実装する練習問題です。
 難易度は徐々に上がっていきます。
@@ -7,8 +9,6 @@
 ### Q1. カウンター (基本)
 ボタンをクリックすると数字が1ずつ増えるカウンターを作ってください。
 *   **Hooks:** `useState`*/
-import { useState } from "react"
-import "./style.css";
 /*export function App (){
   const [count, setCount] = useState(0);
   const onClick = ( () =>  //先に変数として挙動を書いて、のちにその変数を呼び出すみたいな
@@ -340,15 +340,32 @@ Q16のリストの各項目に「削除」ボタンを追加し、押された�
     </>
   )
 }*/
+
+/* 1. 先に子部品(ArticleItem)を作っておく */
+function ArticleItem({ data }){
+    const [count, setCount] = useState(0);
+    const onClick = () => setCount(count + 1);
+
+    return (
+        <li>
+            {data}
+            <button onClick={onClick}>♡{count}いいね</button>
+        </li>
+    )
+}
+
+/* 2. その後に親部品(App)を作る */
 export function App (){
-  const Articles = [
+  const articles = [
     {id:1, data: "記事1"},
     {id:2, data: "記事2"},
     {id:3, data: "記事3"}
-  ]
+  ];
+
   return (
     <ul>
-      {Articles.map((article) => 
+      {/* 既に上で定義されているので、ArticleItemが見つかる！ */}
+      {articles.map((article) => 
         <ArticleItem key={article.id} data={article.data} />
       )}
     </ul>
