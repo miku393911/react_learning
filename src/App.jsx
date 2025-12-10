@@ -7,7 +7,7 @@
 ### Q1. カウンター (基本)
 ボタンをクリックすると数字が1ずつ増えるカウンターを作ってください。
 *   **Hooks:** `useState`*/
-import { useState, useTransition } from "react"
+import { useState } from "react"
 import "./style.css";
 /*export function App (){
   const [count, setCount] = useState(0);
@@ -261,7 +261,7 @@ export function App (){
 /*### Q15. 特定のユーザーを探す (find)
 IDを入力して「検索」ボタンを押すと、該当するIDのユーザーの名前を表示してください。見つからない場合は「見つかりません」と表示します。
 *   **Hooks:** `useState`*/
-export function App (){
+/*export function App (){
   const [text, setText] = useState("");  //入力の状態管理
   const [result, setResult] = useState("");  //結果表示の状態管理
   const userDate = [
@@ -279,10 +279,37 @@ export function App (){
       </ul>
     </>
   )  //foundUsersで絞り込んだデータの中から表示するという限定的な使い方ができる
-}
+}*/
 
 /*### Q16. TODOリスト・追加 (配列のState更新)
 テキストボックスと「追加」ボタンを作り、TODOリストに新しい項目を追加できるようにしてください。
 *   **Hooks:** `useState` (配列)
 *   **ヒント:** `setTodos([...todos, newItem])`*/
+/*export function App (){
+  const [newItem, setNewItem] = useState("");  //入力された文字を保存するため
+  const [todos, setTodos] = useState([]);  //追加した後の状態（リスト全体の状態）、初期値が配列じゃないと.map()メソッドが適用されない
+  const onClickAdd = () => {
+    if(newItem === ""){
+      return; //空白で追加ボタンを押しても動かないように
+    }
+    setTodos([...todos, newItem]);
+    setNewItem("");  //入力欄を空白に戻す
+  }
+  return (
+    <>
+      <input type="text" value={newItem} onChange={ (e) => setNewItem(e.target.value)} placeholder="入力してください" />
+      <button onClick={onClickAdd}>追加</button>
+      <ul>
+        追加リスト👇 {todos.map( (todo) => <li key={todo}>{todo}</li>)}
+      </ul>
+    </>
+  )
+}*/
 
+/*### Q17. TODOリスト・削除 (filterによる削除)
+Q16のリストの各項目に「削除」ボタンを追加し、押された項目をリストから削除してください。
+*   **Hooks:** `useState`
+*   **ヒント:** `filter` を使って、削除したいID以外の新しい配列を作ります。*/
+export function App (){
+  
+}
