@@ -277,7 +277,7 @@ function ArticleItem( {data} ){ ///分割代入でdataを識別子（props）と
     )
 }*/
 
-export function App (){  //合計金額のように自動的に計算で出されるためuseStateで管理する必要がない
+/*export function App (){  //合計金額のように自動的に計算で出されるためuseStateで管理する必要がない
   const products = [ //削除ボタンを作る際に必要なデータ（定数でOK/ 賞品一覧のデータは固定
   {name: "シャツ", price: 3000},
   {name: "ニット", price: 6500},
@@ -309,9 +309,24 @@ export function App (){  //合計金額のように自動的に計算で出さ�
     <p>合計: {totalPrice} 円</p>
     </>
   )
-}
+}*/
 
 /*### Q20. タブ切り替え (条件付きレンダリング)
 「タブ1」「タブ2」「タブ3」のボタンがあります。
 押されたタブに対応するコンテンツ（文章など）だけを表示してください。
 *   **Hooks:** `useState` (現在選択されているタブIDを管理)*/
+export function App (){
+  const [activeTab, setActiveTab] = useState(1);  //最初は1番を選択
+  return ( 
+  <>
+      <button onClick={() => setActiveTab(1)}>タブ1</button>
+      <button onClick={() => setActiveTab(2)}>タブ2</button>
+      <button onClick={() => setActiveTab(3)}>タブ3</button>
+      <div>
+        {activeTab === 1 && <p>タブ1の内容です</p>}
+        {activeTab === 2 && <p>タブ2の内容です</p>}
+        {activeTab === 3 && <p>タブ3の内容です</p>}
+      </div>
+    </>
+  ) //三項演算子を使って見やすく分かりやすく書く方法（論理演算子を使うのも良き
+}
