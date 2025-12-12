@@ -1,14 +1,6 @@
 import { useState } from "react";
 import "./style.css";
-/* # React 実践練習問題集 (全30問)
-学習した「1枚目の画像（ロジック・条件分岐）」と「3枚目の画像（配列・コールバック）」の内容をベースに、Reactの `useState` と `useEffect` を使って実装する練習問題です。
-難易度は徐々に上がっていきます。
-## Part 1: ロジックと条件分岐 (1枚目の内容ベース)
-**テーマ: 条件分岐 (if/switch)、ループロジック、基本的なState管理**
 
-### Q1. カウンター (基本)
-ボタンをクリックすると数字が1ずつ増えるカウンターを作ってください。
-*   **Hooks:** `useState`*/
 /*export function App (){
   const [count, setCount] = useState(0);
   const onClick = ( () =>  //先に変数として挙動を書いて、のちにその変数を呼び出すみたいな
@@ -19,10 +11,6 @@ import "./style.css";
   )
 }
 
-/*### Q2. トグルボタン (条件分岐)
-ボタンをクリックするたびに「ON」「OFF」の文字が切り替わるコンポーネントを作ってください。
-*   **Hooks:** `useState`
-*   **ヒント:** boolean値 (`true`/`false`) を使います。*/
 /*export function App (){
   const [toggle, setToggle] = useState(true);
   return ( //変数として挙動を書かずに、そのまま代入する　ボタンが押されるたび、スイッチの入れ替え（！で反転、有無を判定
@@ -30,9 +18,6 @@ import "./style.css";
   )
 }
 
-/*### Q3. 入力ミラーリング (イベント)
-テキストボックスに入力した文字が、そのすぐ下にリアルタイムで表示されるようにしてください。
-*   **Hooks:** `useState`*/
 /*export function App (){
   const [text, setText] = useState("");
   return (
@@ -44,13 +29,6 @@ import "./style.css";
   )
 }
 
-/*### Q4. FizzBuzzカウンター (ロジック)
-Q1のカウンターを改造し、数字の横に以下のルールで文字を表示してください。
-*   3の倍数: "Fizz"
-*   5の倍数: "Buzz"
-*   15の倍数: "FizzBuzz"
-*   それ以外: 表示なし
-*   **Hooks:** `useState`*/
 /*export function App (){
   const [count, setCount] = useState(0);
   return ( //FizzBuzz関数は通常1から始まることが多い、今回はカウントを元にしているので0から始まる
@@ -58,9 +36,6 @@ Q1のカウンターを改造し、数字の横に以下のルールで文字を
   )
 }
 
-/*### Q5. 偶数・奇数判定 (ロジック)
-数字を入力できるフォームを作り、入力された数字が「偶数」か「奇数」かを判定して表示してください。
-*   **Hooks:** `useState`*/
 /*export function App (){
    const [number, setNumber] = useState("");
    return (
@@ -72,11 +47,6 @@ Q1のカウンターを改造し、数字の横に以下のルールで文字を
    ) //データを取得する場所と、結果を返す場所で書く場所を分ける　value={}はuseStateの第1引数と一致させる
 }
 
-/*### Q6. ログインステータス (条件付きレンダリング)
-「ログイン」ボタンと「ログアウト」ボタンを用意します。
-*   ログイン中: 「ようこそ！ユーザーさん」と表示し、「ログアウト」ボタンだけ表示。
-*   ログアウト中: 「ログインしてください」と表示し、「ログイン」ボタンだけ表示。
-*   **Hooks:** `useState`*/
 /*export function App (){
   const [login, setLogin] = useState(false);
   return (
@@ -90,10 +60,6 @@ Q1のカウンターを改造し、数字の横に以下のルールで文字を
   )
 }
 
-/*### Q7. 最大値トラッカー (ロジック)
-数値入力欄と「更新」ボタンがあります。
-これまでに入力された数値の中で、**最大の数値**だけを常に表示し続けるコンポーネントを作ってください。
-*   **Hooks:** `useState`*/
 /*export function App (){
   const [current, setCurrent] = useState("");  //現在の入力された値を保存
   const [maxNumber, setMaxNumber] = useState(0);  //最大値を保存
@@ -106,13 +72,6 @@ Q1のカウンターを改造し、数字の横に以下のルールで文字を
   )
 }
 
-/*### Q8. 成績判定 (条件分岐)
-点数（0~100）を入力すると、以下の評価を表示してください。
-*   80以上: "A判定"
-*   70以上: "B判定"
-*   60以上: "C判定"
-*   それ以外: "D判定"
-*   **Hooks:** `useState`*/
 /*export function App (){
   const [score, setScore] = useState("");
   return (
@@ -123,10 +82,6 @@ Q1のカウンターを改造し、数字の横に以下のルールで文字を
   ) //scoreは文字列なので、Number()で囲むと更に良い
 }
 
-/*### Q9. 背景色スイッチャー (Switch文ロジック)
-セレクトボックス（ドロップダウン）で「赤」「青」「緑」を選択できるようにします。
-選択した色に合わせて、画面（またはボックス）の背景色を変更してください。
-*   **Hooks:** `useState`*/
 /*export function App (){
   const [color, setColor] = useState("");
   const bgcolor = () => {
@@ -148,10 +103,6 @@ Q1のカウンターを改造し、数字の横に以下のルールで文字を
     )
 }
 
-/*### Q10. シンプルな電卓 (ロジック)
-2つの数値入力欄と、「足す」「引く」「掛ける」「割る」の4つのボタンを用意します。
-ボタンを押すと、計算結果を表示してください。
-*   **Hooks:** `useState`*/
 /*export function App (){
   const [leftCalculation, setLeftCalculation] = useState("");
   const [rightCalculation, setRightCalculation] = useState("");
@@ -169,15 +120,7 @@ Q1のカウンターを改造し、数字の横に以下のルールで文字を
   )
 }
 
-
-/*## Part 2: 配列とコールバック (3枚目の内容ベース)
-**テーマ: 配列操作 (map/filter/find)、コールバック関数、リストレンダリング**
-
-### Q11. 名簿の表示 (map)
-以下の配列データを `map` を使ってリスト表示(`<ul><li>`)してください。
-```javascript*/
 /*const names = ["田中", "佐藤", "鈴木", "高橋"];
-// **Hooks:** なし (Propsまたは定数でOK)
 export function App (){
   return( //<ul>タグの<li>タグだけを配列の要素として繰り返したいから、<li>タグを新しい配列を作る時に一緒に作る
     <ul> 
@@ -186,9 +129,6 @@ export function App (){
   ) //<li>直接{}に書き込むことができる/ li>にkeyを付ける（配列の要素を区別するため
 }
 
-/*### Q12. ユーザーカード (コンポーネント分割)
-`UserCard` というコンポーネントを作り、親コンポーネントから名前と年齢をPropsで渡して表示してください。
-親コンポーネントでは配列データを `map` し、`UserCard` を繰り返し表示してください。*/
 /*function UserCard(props){
   return (
     <li>名前: {props.name}（年齢: {props.age}歳）</li> //UserCardは渡された情報をそのまま表示する役割
@@ -209,10 +149,6 @@ export function App (){
   ) 
 }*/ /*<li>タグを作る感じで、.map()メソッドで回し、引数を取る（returnでUserCardコンポーネントごと返す/その中に引数として配列のデータを渡せるようにする）*/
 
-/*### Q13. アクティブユーザーのみ表示 (filter)
-ユーザーの配列（`{name: "...", isActive: true/false}`）があります。
-チェックボックス「アクティブのみ表示」を用意し、チェックが入っている時は `isActive: true` のユーザーだけを表示してください。
-*   **Hooks:** `useState`*/
 /*export function App (){
   const [isActive, setIsActive] = useState(true);
   const users = [
@@ -237,9 +173,6 @@ export function App (){
   )
 }*/
 
-/*### Q14. ユーザー検索 (filter/includes)
-検索ボックスに入力した文字が名前に含まれるユーザーだけをリアルタイムで絞り込んで表示してください。
-*   **Hooks:** `useState`*/
 /*export function App (){
   const [text, setText] = useState("");
   const userDate = [
@@ -258,9 +191,6 @@ export function App (){
   )
 }*/
 
-/*### Q15. 特定のユーザーを探す (find)
-IDを入力して「検索」ボタンを押すと、該当するIDのユーザーの名前を表示してください。見つからない場合は「見つかりません」と表示します。
-*   **Hooks:** `useState`*/
 /*export function App (){
   const [text, setText] = useState("");  //入力の状態管理
   const [result, setResult] = useState("");  //結果表示の状態管理
@@ -281,14 +211,6 @@ IDを入力して「検索」ボタンを押すと、該当するIDのユーザ�
   )  //foundUsersで絞り込んだデータの中から表示するという限定的な使い方ができる
 }*/
 
-/*### Q16. TODOリスト・追加 (配列のState更新)
-テキストボックスと「追加」ボタンを作り、TODOリストに新しい項目を追加できるようにしてください。
-*   **Hooks:** `useState` (配列)
-*   **ヒント:** `setTodos([...todos, newItem])`
-## Q17. TODOリスト・削除 (filterによる削除)
-Q16のリストの各項目に「削除」ボタンを追加し、押された項目をリストから削除してください。
-*   **Hooks:** `useState`
-*   **ヒント:** `filter` を使って、削除したいID以外の新しい配列を作ります。*/
 /*export function App (){
   const [newItem, setNewItem] = useState("");  //入力された文字を保存するため
   const [todos, setTodos] = useState([]);  //追加した後の状態（リスト全体の状態）、初期値が配列じゃないと.map()メソッドが適用されない
@@ -299,7 +221,7 @@ Q16のリストの各項目に「削除」ボタンを追加し、押された�
     setTodos([...todos, newItem]);
     setNewItem("");  //入力欄を空白に戻す
   }
-  const onClickRemove = (deletedIndex) => {//deletedIndexはリストの中の何番めを消すかを判定するために必要
+  const onClickDeleted = (deletedIndex) => {//deletedIndexはリストの中の何番めを消すかを判定するために必要
     const newTodos = [...todos];  //新しい配列を自動で作るので事前のコピー（この行）は不要
     setTodos(newTodos.filter( (_, index) => index !== deletedIndex));  //残したい人だけ選ぶt、odoは使わないので、_で表しても良いらしい！
   } //indexを第二引数に取ることで、同じ文字を追加した際もきちんと判別ができる
@@ -308,22 +230,12 @@ Q16のリストの各項目に「削除」ボタンを追加し、押された�
       <input type="text" value={newItem} onChange={ (e) => setNewItem(e.target.value)} placeholder="入力してください" />
       <button onClick={onClickAdd}>追加</button>
       <ul>
-        リスト👇 {todos.map( (todo, index) => 
-        <li key={index}>
-          {todo}
-          <button onClick={ () => onClickRemove(index)}>削除</button>
-        </li>
-        )}
+        リスト👇 {todos.map( (todo, index) => <li key={index}> {todo} <button onClick={ () => onClickDeleted(index)}>削除</button> </li> )}
       </ul>
     </>
   ) //アロー関数でindexを削除することを実行できるようにする
 }*/
 
-/*### Q18. いいねボタン (配列内のオブジェクト更新)
-記事のリストがあり、各記事に「いいね！」ボタンがあります。
-ボタンを押すと、その記事の「いいね数」が1増えるようにしてください。
-*   **Hooks:** `useState`
-*   **ヒント:** `map` を使って特定のIDのオブジェクトだけ更新した新しい配列を作ります。*/
 /*export function App (){
   const [articles, setArticles] = useState([ //初期値に配列やオブジェクトを挿入することもできた！
     {id:1, data: "記事1", likes: 0},
@@ -340,34 +252,50 @@ Q16のリストの各項目に「削除」ボタンを追加し、押された�
     </>
   )
 }*/
-
-/* 1. 先に子部品(ArticleItem)を作っておく */
-function ArticleItem({ data }){
-    const [count, setCount] = useState(0);
-    const onClick = () => setCount(count + 1);
-
+/*export function App (){ 
+  const articles = [
+    {id:1, data: "記事1"},
+    {id:2, data: "記事2"},
+    {id:3, data: "記事3"}
+  ];
+  return ( //コンポーネントは関数のようなもので、使い回さないのであれば新しいファイルを作る必要はない
+    <ul>
+      {articles.map((article) => 
+        <ArticleItem key={article.id} data={article.data} />
+      )}
+    </ul>
+  ) //dataという識別子（props）を渡す！
+}
+function ArticleItem( {data} ){ ///分割代入でdataを識別子（props）として受け取っている
+    const [count, setCount] = useState(0);  //これも分割代入を使っている！
+    const onClick = () => setCount(count + 1);  //クリックされた時にカウントを1増やすという行為を処理するから、アロー関数を用いて表す
     return (
         <li>
             {data}
             <button onClick={onClick}>♡{count}いいね</button>
         </li>
     )
-}
+}*/
 
-/* 2. その後に親部品(App)を作る */
-export function App (){
-  const articles = [
-    {id:1, data: "記事1"},
-    {id:2, data: "記事2"},
-    {id:3, data: "記事3"}
-  ];
-
+/*### Q19. ショッピングカート合計 (reduce/計算)
+商品名と価格が入った配列があります。
+カートに入っている商品の「合計金額」を常に計算して表示してください。
+*   **Hooks:** `useState` (商品は固定でも可、追加削除できれば尚良し)*/
+export function App (){  //合計金額のように自動的に計算で出されるためuseStateで管理する必要がない
+  const [cartItems, setCartItems] = useState([ //商品リスト自体を管理（商品の増減のたびに再レンダリング
+    {name: "シャツ", price: 3000},
+    {name: "ニット", price: 6500},
+    {name: "スカート", price: 4000},
+  ]) //（今の合計、次の商品）　=> 次の合計, totalの最初の値（reduceにおいて、何から始めるかを決めるための初期値
+  const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
   return (
+    <>
+    <h1>商品一覧</h1>
     <ul>
-      {/* 既に上で定義されているので、ArticleItemが見つかる！ */}
-      {articles.map((article) => 
-        <ArticleItem key={article.id} data={article.data} />
-      )}
+      {cartItems.map ((cartItem) => <li key={cartItem.name}>
+      {cartItem.name} : {cartItem.price}円 </li>)}
     </ul>
+    <p>合計: {totalPrice} 円</p>
+    </>
   )
 }
