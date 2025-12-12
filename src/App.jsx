@@ -228,7 +228,7 @@ export function App (){
   return (
     <>
       <input type="text" value={newItem} onChange={ (e) => setNewItem(e.target.value)} placeholder="入力してください" />
-      <button onClick={onClickAdd}>追加</button>
+      <button onClick={ () => onClickAdd()}>追加</button>
       <ul>
         リスト👇 {todos.map( (todo, index) => <li key={index}> {todo} <button onClick={ () => onClickDeleted(index)}>削除</button> </li> )}
       </ul>
@@ -277,25 +277,41 @@ function ArticleItem( {data} ){ ///分割代入でdataを識別子（props）と
     )
 }*/
 
-/*### Q19. ショッピングカート合計 (reduce/計算)
-商品名と価格が入った配列があります。
-カートに入っている商品の「合計金額」を常に計算して表示してください。
-*   **Hooks:** `useState` (商品は固定でも可、追加削除できれば尚良し)*/
 export function App (){  //合計金額のように自動的に計算で出されるためuseStateで管理する必要がない
-  const [cartItems, setCartItems] = useState([ //商品リスト自体を管理（商品の増減のたびに再レンダリング
-    {name: "シャツ", price: 3000},
-    {name: "ニット", price: 6500},
-    {name: "スカート", price: 4000},
-  ]) //（今の合計、次の商品）　=> 次の合計, totalの最初の値（reduceにおいて、何から始めるかを決めるための初期値
-  const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
+  const products = [ //削除ボタンを作る際に必要なデータ（定数でOK/ 賞品一覧のデータは固定
+  {name: "シャツ", price: 3000},
+  {name: "ニット", price: 6500},
+  {name: "スカート", price: 4000},
+]
+  const [cartItems, setCartItems] = useState([]); //カート自体を管理（商品の増減のたびに再レンダリング
+  const totalPrice = cartItems.reduce((total, item) => total + item.price, 0); //（今の合計、次の商品） => 次の合計, totalの最初の値（reduceにおいて、何から始めるかを決めるための初期値
+  const onClickAdd = (addItem) => {
+    setCartItems([...cartItems, addItem]);  //カートに商品一覧から追加した商品を追加する
+  }
+  const onClickDeleted = (deletedIndex) => {
+    const newTodos = [...cartItems];  //削除したいのはカートの商品なので、カートの商品をコピーする（削除したいものを削除するためのfilter
+    setCartItems(newTodos.filter((_, index) => index !== deletedIndex)) //商品のindexと削除したいindexが一致しないものを残す
+  }
   return (
     <>
     <h1>商品一覧</h1>
     <ul>
-      {cartItems.map ((cartItem) => <li key={cartItem.name}>
-      {cartItem.name} : {cartItem.price}円 </li>)}
+      {products.map ((product) => <li key={product.name}>
+      {product.name} : {product.price}円 
+      <button onClick={() => onClickAdd(product)}>追加</button></li>)}
+    </ul>
+    <h1>現在のカート</h1>
+    <ul>
+      {cartItems.map ((cartItem, index) => <li key={index}>
+      {cartItem.name} : {cartItem.price}円 
+      <button onClick={ () => onClickDeleted(index)}>削除</button></li>)}
     </ul>
     <p>合計: {totalPrice} 円</p>
     </>
   )
 }
+
+/*### Q20. タブ切り替え (条件付きレンダリング)
+「タブ1」「タブ2」「タブ3」のボタンがあります。
+押されたタブに対応するコンテンツ（文章など）だけを表示してください。
+*   **Hooks:** `useState` (現在選択されているタブIDを管理)*/
