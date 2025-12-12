@@ -315,8 +315,8 @@ function ArticleItem( {data} ){ ///分割代入でdataを識別子（props）と
 「タブ1」「タブ2」「タブ3」のボタンがあります。
 押されたタブに対応するコンテンツ（文章など）だけを表示してください。
 *   **Hooks:** `useState` (現在選択されているタブIDを管理)*/
-export function App (){
-  const [activeTab, setActiveTab] = useState(1);  //最初は1番を選択
+/*export function App (){
+  const [activeTab, setActiveTab] = useState(1);  //最初はタブ1番を選択
   return ( 
   <>
       <button onClick={() => setActiveTab(1)}>タブ1</button>
@@ -328,5 +328,19 @@ export function App (){
         {activeTab === 3 && <p>タブ3の内容です</p>}
       </div>
     </>
-  ) //三項演算子を使って見やすく分かりやすく書く方法（論理演算子を使うのも良き
+  ) //三項演算子 ? : を使って見やすく分かりやすく書く方法（論理演算子 && を使うのも良き
+}*/
+export function App (){
+  const [activeTab, setActiveTab] = useState(0);  //配列だから0番目スタート
+  const constents = ["タブ1の内容です", "タブ2の内容です", "タブ3の内容です"];
+  return(
+    <>
+      <button onClick={ () => setActiveTab(0)}>タブ1</button>
+      <button onClick={ () => setActiveTab(1)}>タブ2</button>
+      <button onClick={ () => setActiveTab(2)}>タブ3</button>
+      <div>
+        {constents[activeTab]}
+      </div>
+    </>
+  )
 }
