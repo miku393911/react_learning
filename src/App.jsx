@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./style.css";
 
 /*export function App (){
@@ -311,10 +311,6 @@ function ArticleItem( {data} ){ ///分割代入でdataを識別子（props）と
   )
 }*/
 
-/*### Q20. タブ切り替え (条件付きレンダリング)
-「タブ1」「タブ2」「タブ3」のボタンがあります。
-押されたタブに対応するコンテンツ（文章など）だけを表示してください。
-*   **Hooks:** `useState` (現在選択されているタブIDを管理)*/
 /*export function App (){
   const [activeTab, setActiveTab] = useState(1);  //最初はタブ1番を選択
   return ( 
@@ -330,10 +326,10 @@ function ArticleItem( {data} ){ ///分割代入でdataを識別子（props）と
     </>
   ) //三項演算子 ? : を使って見やすく分かりやすく書く方法（論理演算子 && を使うのも良き
 }*/
-export function App (){
+/*export function App (){
   const [activeTab, setActiveTab] = useState(0);  //配列だから0番目スタート
   const constents = ["タブ1の内容です", "タブ2の内容です", "タブ3の内容です"];
-  return(
+  return( //配列から選ぶバージョン👆
     <>
       <button onClick={ () => setActiveTab(0)}>タブ1</button>
       <button onClick={ () => setActiveTab(1)}>タブ2</button>
@@ -343,4 +339,34 @@ export function App (){
       </div>
     </>
   )
-}
+}*/
+
+/*export function App (){
+  const [count, setCount] = useState(0); 
+  const totalCount = () => setCount(count + 1);
+  useEffect ( () => { //useEffect()にreturnを書くと片付けとして処理されるエラーになる
+    document.title = `現在のカウント: ${count}`; //document.titleでHTMLの<title>を上書きできるということ
+  }, [count]) //依存関係配列を書こう！
+return (<button onClick={totalCount}>カウントアップ！</button>) //これは画面に表示するのでreturnが必要、今回はカウントを増やすだけで良くてカウンター自体も1つしかないので関数を代入するだけでOK
+}*/
+
+/*### Q22. ウィンドウサイズ監視 (useEffect + Cleanup)
+ウィンドウの幅（width）を表示するコンポーネントを作ります。
+ウィンドウサイズを変えると、リアルタイムで数値が更新されるようにしてください。
+*   **Hooks:** `useState`, `useEffect`
+*   **ヒント:** `window.addEventListener` と `removeEventListener`*/
+export function App (){
+  const [width, setWidth] = useState(window.innerWidth); //初期値は全世界共通の書き方！（width.outerWidth（外枠）やwindow.innerHeight（高さ）も<!DOCTYPE html>
+  useEffect( () => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize); //resizeというイベント駆動 + 関数を実行する
+    return () => { //クリーンアップ関数（画面から消える時に実行される処理
+      window.removeEventListener("resize", handleResize); //JavaScriptでもクリーンアップの処理を書いてあげる方が丁寧
+    }; //Reacはコンポーネントの部分だけでレンダリングができるので、コンポーネントが消えてもブラウザ上にはイベントが残る
+  }, []); //空配列を入れると、最初の1回の変更だけ適用される（addとremove
+  return ( //画面に表示するためのreturn
+    <>
+      <p>現在のウィンドウ幅: {width}</p> 
+    </>
+  )
+  }
