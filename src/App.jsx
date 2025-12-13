@@ -313,7 +313,7 @@ function ArticleItem( {data} ){ ///分割代入でdataを識別子（props）と
 }*/
 
 export function App (){
-  const [activeTab, setActiveTab] = useState(1);  //最初はタブ1番を選択
+  const [activeTab, setActiveTab] = useState(1);  //最初はタブ1を選択
   return ( 
   <>
       <button onClick={() => setActiveTab(1)}>タブ1</button>
