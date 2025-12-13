@@ -208,7 +208,7 @@ export function App (){
   )  //foundUsersで絞り込んだデータの中から表示するという限定的な使い方ができる
 }*/
 
-export function App (){
+/*export function App (){
   const [newItem, setNewItem] = useState("");  //入力された文字を保存するため
   const [todos, setTodos] = useState([]);  //追加した後の状態（リスト全体の状態）、初期値が配列じゃないと.map()メソッドが適用されない
   const onClickAdd = () => {
@@ -235,14 +235,14 @@ export function App (){
       </ul>
     </>
   ) //アロー関数でindexを削除することを実行できるようにする
-}
+}*/
 
-/*export function App (){
+export function App (){
   const [articles, setArticles] = useState([ //初期値に配列やオブジェクトを挿入することもできた！
     {id:1, data: "記事1", likes: 0},
     {id:2, data: "記事2", likes: 0},
     {id:3, data: "記事3", likes: 0}
-  ])
+  ]) //いいね数であるlikesというプロパティを作るところから！（初期値は0
   const onClickLike = (id) => //配列のオブジェクトのidがonClickLikeしたボタンのidと一致するかどうか調べる
     setArticles(articles.map( (article) => article.id === id ? {...article, likes: article.likes +1 } : article))
   return (
@@ -252,7 +252,7 @@ export function App (){
     </ul>
     </>
   )
-}*/
+}
 /*export function App (){ 
   const articles = [
     {id:1, data: "記事1"},
