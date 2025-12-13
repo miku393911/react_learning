@@ -278,15 +278,15 @@ function ArticleItem( {data} ){ ///分割代入でdataを識別子（props）と
     )
 }*/
 
-export function App (){  //合計金額のように自動的に計算で出されるためuseStateで管理する必要がない
+/*export function App (){  //合計金額のように自動的に計算で出されるためuseStateで管理する必要がない
   const products = [ //削除ボタンを作る際に必要なデータ（定数でOK/ 賞品一覧のデータは固定
-  {name: "シャツ", price: 3000},
-  {name: "ニット", price: 6500},
-  {name: "スカート", price: 4000},
+    {name: "シャツ", price: 3000},
+    {name: "ニット", price: 6500},
+    {name: "スカート", price: 4000},
 ]
   const [cartItems, setCartItems] = useState([]); //カート自体を管理（商品の増減のたびに再レンダリング
   const totalPrice = cartItems.reduce((total, item) => total + item.price, 0); //（今の合計、次の商品） => 次の合計, totalの最初の値（reduceにおいて、何から始めるかを決めるための初期値
-  const onClickAdd = (addItem) => {
+  const onClickAdd = (addItem) => {  //基本.reduce()は引数を2つ持つ（合計と今の値の2つで足していって1つにするイメージ
     setCartItems([...cartItems, addItem]);  //カートに商品一覧から追加した商品を追加する
   }
   const onClickDeleted = (deletedIndex) => {
@@ -310,9 +310,9 @@ export function App (){  //合計金額のように自動的に計算で出さ�
     <p>合計: {totalPrice} 円</p>
     </>
   )
-}
+}*/
 
-/*export function App (){
+export function App (){
   const [activeTab, setActiveTab] = useState(1);  //最初はタブ1番を選択
   return ( 
   <>
@@ -326,7 +326,7 @@ export function App (){  //合計金額のように自動的に計算で出さ�
       </div>
     </>
   ) //三項演算子 ? : を使って見やすく分かりやすく書く方法（論理演算子 && を使うのも良き
-}*/
+}
 /*export function App (){
   const [activeTab, setActiveTab] = useState(0);  //配列だから0番目スタート
   const constents = ["タブ1の内容です", "タブ2の内容です", "タブ3の内容です"];
