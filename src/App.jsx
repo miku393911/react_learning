@@ -374,7 +374,7 @@ return (<button onClick={totalCount}>カウントアップ！</button>) //これ
     if(count <= 0) return; //カウントが0以下ならカウントダウンタイマー停止
     const timer = setInterval( () => { //setInterval()は指定した時間ごとに、決まった処理を繰り返し実行する
       setCount( (prevCount) => prevCount -1);
-    }, 1000) //1000は秒数でタイマーの時の依存関係配列は1000だよ〜
+    }, 1000) //1000は秒数でタイマーの時の依存関係配列は1000であることが多い！
     return () => clearInterval(timer); // クリーンアップ関数
   }, [count]) //countが変わるたびに再レンダリングしたいから！
   return( //ボタンがクリックされたらcountが10にsetされる（という処理が実行されるということ/ コールバック関数らしい
@@ -385,10 +385,32 @@ return (<button onClick={totalCount}>カウントアップ！</button>) //これ
   ) //countがnullじゃないのであれば、右側を見に行く
 }*/
 
-/*### Q24. データフェッチのシミュレーション (useEffect)
-「画面を開いたら、『調理中...』と表示され、3秒後（3000ms）に『完成！』に変わる」setTimeout`利用）(setState)と表示を切り替えてください。
-ヒント 状態（文字）: 最初は "調理中..." にしておく
-*   **Hooks:** `useState`, `useEffect`*/
-export function App (){
+/*export function App (){
+  const [status, setStatus] = useState("調理中...");  //状態の管理（初期値は調整中...
+  useEffect( () => {
+    const timer = setTimeout( () => {
+      setStatus("完成！");
+    }, 3000) //3秒後という規定があるから！
+    return () => clearTimeout(timer) //クリーンアップ関数
+  }, []) //依存関係配列は今回は[]で、最初の1回のみ適用される
+  return (
+    <>
+      <p style={{color: status === "完成！" ? "blue" : "black"}}>{status}</p>
+    </>
+  ) //styleを付けるならこんな感じ（三項演算子で条件分岐を
+}*/
+/*export function App(){ //変える前の問題
+  const [status, setStatus] = useState("読み込み中...");
+  useEffect( () => {
+    const timer = setTimeout( () => {
+      setStatus("データ読み込み完了！");
+    }, 2000)
+    return () => clearTimeout(timer);
+  }, [])
+  return (
+    <>
+      <p>{status}</p>
+    </>
+  )
+}*/
 
-}
