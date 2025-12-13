@@ -237,22 +237,22 @@ export function App (){
   ) //アロー関数でindexを削除することを実行できるようにする
 }*/
 
-export function App (){
+/*export function App (){
   const [articles, setArticles] = useState([ //初期値に配列やオブジェクトを挿入することもできた！
     {id:1, data: "記事1", likes: 0},
     {id:2, data: "記事2", likes: 0},
     {id:3, data: "記事3", likes: 0}
   ]) //いいね数であるlikesというプロパティを作るところから！（初期値は0
   const onClickLike = (id) => //配列のオブジェクトのidがonClickLikeしたボタンのidと一致するかどうか調べる
-    setArticles(articles.map( (article) => article.id === id ? {...article, likes: article.likes +1 } : article))
-  return (
+    setArticles((prevArticles) => prevArticles.map( (article) => article.id === id ? {...article, likes: article.likes +1 } : article))
+  return ( //関数型アップデートで書く場合が多い（連続してボタンが押された時とか、　onClickLikeの引数にarticle.idが使われているのは、それでボタンを見分けているから
     <>
     <ul>
       {articles.map( (article) => <li key={article.id}>{article.data}<button onClick={ () => onClickLike(article.id)}>♡{article.likes}いいね</button></li>)}
     </ul>
     </>
   )
-}
+}*/
 /*export function App (){ 
   const articles = [
     {id:1, data: "記事1"},
@@ -268,9 +268,9 @@ export function App (){
   ) //dataという識別子（props）を渡す！
 }
 function ArticleItem( {data} ){ ///分割代入でdataを識別子（props）として受け取っている
-    const [count, setCount] = useState(0);  //これも分割代入を使っている！
+    const [count, setCount] = useState(0);  //useStateも分割代入を使っている！
     const onClick = () => setCount(count + 1);  //クリックされた時にカウントを1増やすという行為を処理するから、アロー関数を用いて表す
-    return (
+    return ( //こっちも(prev) => setCount(prev + 1)と書いた方がより強固なコードになる
         <li>
             {data}
             <button onClick={onClick}>♡{count}いいね</button>
@@ -278,7 +278,7 @@ function ArticleItem( {data} ){ ///分割代入でdataを識別子（props）と
     )
 }*/
 
-/*export function App (){  //合計金額のように自動的に計算で出されるためuseStateで管理する必要がない
+export function App (){  //合計金額のように自動的に計算で出されるためuseStateで管理する必要がない
   const products = [ //削除ボタンを作る際に必要なデータ（定数でOK/ 賞品一覧のデータは固定
   {name: "シャツ", price: 3000},
   {name: "ニット", price: 6500},
@@ -310,7 +310,7 @@ function ArticleItem( {data} ){ ///分割代入でdataを識別子（props）と
     <p>合計: {totalPrice} 円</p>
     </>
   )
-}*/
+}
 
 /*export function App (){
   const [activeTab, setActiveTab] = useState(1);  //最初はタブ1番を選択
