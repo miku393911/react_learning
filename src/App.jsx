@@ -93,7 +93,7 @@ import "./style.css";
   }}
   return ( //全体にstyleを定義する（最初のreturn内の<div>タグに適用させる / 定義したかたまりごと呼び出してもOK
     <div style={{backgroundColor: bgcolor(), width: "155px", height: "25px", borderRadius: "5px"}}>
-      <select name="color" onChange={ (e) => setColor(e.target.value)}>
+      <select name="color"　value={color} onChange={ (e) => setColor(e.target.value)}> //Reactとブラウザの表示を一致させる
         <option value="">-- 選択してください --</option>
         <option value="赤">赤</option>
         <option value="青">青</option>
@@ -101,24 +101,24 @@ import "./style.css";
       </select>
     </div>
     )
-}
+}*/
 
 /*export function App (){
-  const [leftCalculation, setLeftCalculation] = useState("");
+  const [leftCalculation, setLeftCalculation] = useState("");  //numbreにしても""は0と同義
   const [rightCalculation, setRightCalculation] = useState("");
   const [total, setTotal] = useState("");
   return (
     <>
-      <input type="text" name="leftCalculation" value={leftCalculation} onChange={ (e) => setLeftCalculation(e.target.value)}/>
+      <input type="number" name="leftCalculation" value={leftCalculation} onChange={ (e) => setLeftCalculation(e.target.value)}/>
       <button onClick={ ()=> setTotal(Number(leftCalculation) + Number(rightCalculation)) }>足す</button>
       <button onClick={ ()=> setTotal(Number(leftCalculation) - Number(rightCalculation)) }>引く</button>
       <button onClick={ ()=> setTotal(Number(leftCalculation) * Number(rightCalculation)) }>掛ける</button>
       <button onClick={ ()=> setTotal(Number(leftCalculation) / Number(rightCalculation)) }>割る</button>
-      <input type="text" name="rightCalculation" value={rightCalculation} onChange={ (e) => setRightCalculation(e.target.value )} />
+      <input type="number" name="rightCalculation" value={rightCalculation} onChange={ (e) => setRightCalculation(e.target.value )} />
       <p>計算結果: {total}</p>
     </>
   )
-}
+}*/
 
 /*const names = ["田中", "佐藤", "鈴木", "高橋"];
 export function App (){
@@ -127,7 +127,7 @@ export function App (){
       { names.map( (name) => <li key={name}>{name}</li>)}
     </ul>
   ) //<li>直接{}に書き込むことができる/ li>にkeyを付ける（配列の要素を区別するため
-}
+}*/
 
 /*function UserCard(props){
   return (
@@ -161,11 +161,11 @@ export function App (){
       return user.isActive === true;  //trueだけを返す
     }else{
       return true;  //全部返す
-    } //checked属性を書き、isActiveが権限を握るように書いてあげる！
+    } 
   });
-  return (
+  return ( //checked属性を書き、isActiveが権限を握るように書いてあげる、！でボタンのオンオフが挙動するように
     <> 
-      <input type="checkbox" checked={isActive} onChange={ () => setIsActive(!isActive) } /> 
+      <input type="checkbox" checked={isActive} onChange={ () => setIsActive(!isActive) } /> checkbox
       <ul>
         { filterUsers.map( (user) => <li key={user.name}>{user.name}</li> )}
       </ul>
@@ -173,7 +173,7 @@ export function App (){
   )
 }*/
 
-/*export function App (){
+export function App (){
   const [text, setText] = useState("");
   const userDate = [
     {name: "miku", age: 24},
@@ -189,7 +189,7 @@ export function App (){
       </ul>
     </>
   )
-}*/
+}
 
 /*export function App (){
   const [text, setText] = useState("");  //入力の状態管理
@@ -350,12 +350,7 @@ function ArticleItem( {data} ){ ///分割代入でdataを識別子（props）と
 return (<button onClick={totalCount}>カウントアップ！</button>) //これは画面に表示するのでreturnが必要、今回はカウントを増やすだけで良くてカウンター自体も1つしかないので関数を代入するだけでOK
 }*/
 
-/*### Q22. ウィンドウサイズ監視 (useEffect + Cleanup)
-ウィンドウの幅（width）を表示するコンポーネントを作ります。
-ウィンドウサイズを変えると、リアルタイムで数値が更新されるようにしてください。
-*   **Hooks:** `useState`, `useEffect`
-*   **ヒント:** `window.addEventListener` と `removeEventListener`*/
-export function App (){
+/*export function App (){
   const [width, setWidth] = useState(window.innerWidth); //初期値は全世界共通の書き方！（width.outerWidth（外枠）やwindow.innerHeight（高さ）も<!DOCTYPE html>
   useEffect( () => {
     const handleResize = () => setWidth(window.innerWidth);
@@ -369,4 +364,21 @@ export function App (){
       <p>現在のウィンドウ幅: {width}</p> 
     </>
   )
-  }
+  }*/
+
+ /* ### Q23. カウントダウンタイマー (useEffect + setInterval)
+  「スタート」ボタンを押すと、10から0まで1秒ごとにカウントダウンするタイマーを作ってください。
+  0になったら「終了！」と表示します。
+  *   **Hooks:** `useState`, `useEffect`*/
+
+/*export function App (){
+  const [count, setCount] = useState(10);
+  useEffect( () => {
+    return 
+  })
+  return(
+    <>
+      
+    </>
+  )
+}*/
