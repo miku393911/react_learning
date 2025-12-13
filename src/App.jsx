@@ -328,7 +328,7 @@ function ArticleItem( {data} ){ ///分割代入でdataを識別子（props）と
   </>
   ) //三項演算子 ? : を使って見やすく分かりやすく書く方法（論理演算子 && を使うのも良き
 }*/
-export function App (){
+/*export function App (){
   const [activeTab, setActiveTab] = useState(0);  //配列だから0番目スタート
   const contents = ["タブ1の内容です", "タブ2の内容です", "タブ3の内容です"];
   return( //配列から選ぶバージョン👆
@@ -341,12 +341,12 @@ export function App (){
       </div>
     </>
   ) //contents[activeTab]でタブの切り替えによって、内容を変えるということ！
-}
+}*/
 
 /*export function App (){
   const [count, setCount] = useState(0); 
   const totalCount = () => setCount(count + 1);
-  useEffect ( () => { //useEffect()にreturnを書くと片付けとして処理されるエラーになる
+  useEffect ( () => { //useEffect()の中にreturnを書くなら片付け処理（クリーンアップ関数としてじゃないとダメ！
     document.title = `現在のカウント: ${count}`; //document.titleでHTMLの<title>を上書きできるということ
   }, [count]) //依存関係配列を書こう！
 return (<button onClick={totalCount}>カウントアップ！</button>) //これは画面に表示するのでreturnが必要、今回はカウントを増やすだけで良くてカウンター自体も1つしかないので関数を代入するだけでOK
@@ -366,14 +366,14 @@ return (<button onClick={totalCount}>カウントアップ！</button>) //これ
       <p>現在のウィンドウ幅: {width}</p> 
     </>
   )
-  }*/
+}*/
 
  /* ### Q23. カウントダウンタイマー (useEffect + setInterval)
   「スタート」ボタンを押すと、10から0まで1秒ごとにカウントダウンするタイマーを作ってください。
   0になったら「終了！」と表示します。
   *   **Hooks:** `useState`, `useEffect`*/
 
-/*export function App (){
+export function App (){
   const [count, setCount] = useState(10);
   useEffect( () => {
     return 
@@ -383,4 +383,4 @@ return (<button onClick={totalCount}>カウントアップ！</button>) //これ
       
     </>
   )
-}*/
+}
