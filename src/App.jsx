@@ -312,35 +312,36 @@ function ArticleItem( {data} ){ ///分割代入でdataを識別子（props）と
   )
 }*/
 
-export function App (){
-  const [activeTab, setActiveTab] = useState(1);  //最初はタブ1を選択
-  return ( 
-  <>
-      <button onClick={() => setActiveTab(1)}>タブ1</button>
-      <button onClick={() => setActiveTab(2)}>タブ2</button>
-      <button onClick={() => setActiveTab(3)}>タブ3</button>
-      <div>
-        {activeTab === 1 && <p>タブ1の内容です</p>}
-        {activeTab === 2 && <p>タブ2の内容です</p>}
-        {activeTab === 3 && <p>タブ3の内容です</p>}
-      </div>
-    </>
-  ) //三項演算子 ? : を使って見やすく分かりやすく書く方法（論理演算子 && を使うのも良き
-}
 /*export function App (){
+  const [activeTab, setActiveTab] = useState(1);  //最初はタブ1を選択
+  const tabs = [
+    {id: 1, label: "タブ1", content: "タブ1の内容です"},
+    {id: 2, label: "タブ2", content: "タブ2の内容です"},
+    {id: 3, label: "タブ3", content: "タブ3の内容です"}
+  ]
+  return ( //ボタンを自動生成（.map()メソッド、内容は.find()メソッドや.find()メソッドで探して表示（これで、ボタンの数が増えても楽に対応可能
+  <>
+    {tabs.map( (tab) => (<button key={tab.id} onClick={() => setActiveTab(tab.id)}>{tab.label}</button>))}
+    <div>
+      {tabs.find((tab) => tab.id === activeTab).content}
+    </div>
+  </>
+  ) //三項演算子 ? : を使って見やすく分かりやすく書く方法（論理演算子 && を使うのも良き
+}*/
+export function App (){
   const [activeTab, setActiveTab] = useState(0);  //配列だから0番目スタート
-  const constents = ["タブ1の内容です", "タブ2の内容です", "タブ3の内容です"];
+  const contents = ["タブ1の内容です", "タブ2の内容です", "タブ3の内容です"];
   return( //配列から選ぶバージョン👆
     <>
       <button onClick={ () => setActiveTab(0)}>タブ1</button>
       <button onClick={ () => setActiveTab(1)}>タブ2</button>
       <button onClick={ () => setActiveTab(2)}>タブ3</button>
       <div>
-        {constents[activeTab]}
+        {contents[activeTab]}
       </div>
     </>
-  )
-}*/
+  ) //contents[activeTab]でタブの切り替えによって、内容を変えるということ！
+}
 
 /*export function App (){
   const [count, setCount] = useState(0); 
