@@ -143,8 +143,7 @@ export function App (){
     <>
       <ul> //データを持っていて、.map()メソッドを使って全員分表示する
         {users.map((user) => { return <UserCard key={user.name} name={user.name} age={user.age} /> })} 
-      </ul>  
-      //name={}やage={}の命名は、UserCardコンポーネントを作る時に決めた名前だということ
+      </ul>  //name={}やage={}の命名は、UserCardコンポーネントを作る時に決めた名前だということ
     </>
   ) 
 }*/ /*<li>タグを作る感じで、.map()メソッドで回し、引数を取る（returnでUserCardコンポーネントごと返す/その中に引数として配列のデータを渡せるようにする）*/
@@ -173,15 +172,15 @@ export function App (){
   )
 }*/
 
-export function App (){
+/*export function App (){
   const [text, setText] = useState("");
   const userDate = [
     {name: "miku", age: 24},
     {name: "yuka", age: 30},
     {name: "yuuta", age: 27}
   ] //.toLowerCase()は関数、引数userとオブジェクトのnameを調べるからuser.name、inputのtextに含まれているかどうかを調べる
-  const filterUsers = userDate.filter( (user) => { return user.name.toLocaleLowerCase().includes(text) });
-  return (
+  const filterUsers = userDate.filter( (user) => user.name.toLowerCase().includes(text.toLowerCase()));
+  return ( //text（input欄）が大文字でもしっかり対応できるようにtextにもtoLowerCase()を付けるよ尚良し
     <>
       <input type="text" value={text} onChange={(e) => setText(e.target.value)} placeholder="入力してください"  />
       <ul>
@@ -189,7 +188,7 @@ export function App (){
       </ul>
     </>
   )
-}
+}*/
 
 /*export function App (){
   const [text, setText] = useState("");  //入力の状態管理
@@ -199,19 +198,17 @@ export function App (){
     {id: 2, name: "yuka", age: 30},
     {id: 3, name: "yuuta", age: 27},
   ]
-  const foundUsers = userDate.find( (user) => user.id == Number(text));  //===（厳密等価演算子）にして型を合わせるか、==（等価演算子）にして型を気にしないで済むようにするか
+  const foundUsers = userDate.find( (user) => user.id == Number(text));  //===（厳密等価演算子）にしてNumber()で型を合わせるか、==（等価演算子）にして型を気にしないで済むようにするか
   return ( //findは条件に合う1つを連れてくるだけ、1つのオブジェクトごと連れてくるので.mapで配列全体を把握する必要がない
     <>
       <input type="text" value={text} onChange={(e) => setText(e.target.value)} placeholder="IDを入力してください" />
       <button onClick={() => setResult(foundUsers ? foundUsers.name : "見つかりませんでした")}>検索</button>
-      <ul> 
-        検索結果： {result}
-      </ul>
+      <p>検索結果： {result}</p>
     </>
   )  //foundUsersで絞り込んだデータの中から表示するという限定的な使い方ができる
 }*/
 
-/*export function App (){
+export function App (){
   const [newItem, setNewItem] = useState("");  //入力された文字を保存するため
   const [todos, setTodos] = useState([]);  //追加した後の状態（リスト全体の状態）、初期値が配列じゃないと.map()メソッドが適用されない
   const onClickAdd = () => {
@@ -222,8 +219,8 @@ export function App (){
     setNewItem("");  //入力欄を空白に戻す
   }
   const onClickDeleted = (deletedIndex) => {//deletedIndexはリストの中の何番めを消すかを判定するために必要
-    const newTodos = [...todos];  //新しい配列を自動で作るので事前のコピー（この行）は不要
-    setTodos(newTodos.filter( (_, index) => index !== deletedIndex));  //残したい人だけ選ぶt、odoは使わないので、_で表しても良いらしい！
+    const newTodos = [...todos];  //新しい配列を自動で作るので事前のコピー（この行）は本来なら不要
+    setTodos(newTodos.filter( (_, index) => index !== deletedIndex));  //残したい人だけ選ぶ、todoは使わないので、_で表せる！
   } //indexを第二引数に取ることで、同じ文字を追加した際もきちんと判別ができる
   return (
     <>
@@ -234,7 +231,7 @@ export function App (){
       </ul>
     </>
   ) //アロー関数でindexを削除することを実行できるようにする
-}*/
+}
 
 /*export function App (){
   const [articles, setArticles] = useState([ //初期値に配列やオブジェクトを挿入することもできた！
