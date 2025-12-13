@@ -368,19 +368,27 @@ return (<button onClick={totalCount}>カウントアップ！</button>) //これ
   )
 }*/
 
- /* ### Q23. カウントダウンタイマー (useEffect + setInterval)
-  「スタート」ボタンを押すと、10から0まで1秒ごとにカウントダウンするタイマーを作ってください。
-  0になったら「終了！」と表示します。
-  *   **Hooks:** `useState`, `useEffect`*/
-
-export function App (){
-  const [count, setCount] = useState(10);
+/*export function App (){
+  const [count, setCount] = useState(null); //数字のため、空白はnullで表現する！
   useEffect( () => {
-    return 
-  })
-  return(
+    if(count <= 0) return; //カウントが0以下ならカウントダウンタイマー停止
+    const timer = setInterval( () => { //setInterval()は指定した時間ごとに、決まった処理を繰り返し実行する
+      setCount( (prevCount) => prevCount -1);
+    }, 1000) //1000は秒数でタイマーの時の依存関係配列は1000だよ〜
+    return () => clearInterval(timer); // クリーンアップ関数
+  }, [count]) //countが変わるたびに再レンダリングしたいから！
+  return( //ボタンがクリックされたらcountが10にsetされる（という処理が実行されるということ/ コールバック関数らしい
     <>
-      
+      <button onClick={() => setCount(10)}>スタート！</button>
+      {count !== null && (count === 0 ? <p>終了！</p> : <p>カウントダウンタイマー: {count}秒</p>)}
     </>
-  )
+  ) //countがnullじゃないのであれば、右側を見に行く
+}*/
+
+/*### Q24. データフェッチのシミュレーション (useEffect)
+「画面を開いたら、『調理中...』と表示され、3秒後（3000ms）に『完成！』に変わる」setTimeout`利用）(setState)と表示を切り替えてください。
+ヒント 状態（文字）: 最初は "調理中..." にしておく
+*   **Hooks:** `useState`, `useEffect`*/
+export function App (){
+
 }
