@@ -215,19 +215,23 @@ export function App (){
     if(newItem === ""){
       return; //空白で追加ボタンを押しても動かないように
     }
-    setTodos([...todos, newItem]);
+    const newObject = { //idもセットしたオブジェクトをを作る
+      id: Date.now(),
+      text: newItem
+    }
+    setTodos([...todos, newObject]); //本来はnewItemが追加される予定だった
     setNewItem("");  //入力欄を空白に戻す
   }
-  const onClickDeleted = (deletedIndex) => {//deletedIndexはリストの中の何番めを消すかを判定するために必要
+  const onClickDeleted = (deletedId) => {//deletedIndexはリストの中の何番めを消すかを判定するために必要
     const newTodos = [...todos];  //新しい配列を自動で作るので事前のコピー（この行）は本来なら不要
-    setTodos(newTodos.filter( (_, index) => index !== deletedIndex));  //残したい人だけ選ぶ、todoは使わないので、_で表せる！
+    setTodos(newTodos.filter( (todo) => todo.id !== deletedId));  //残したい人だけ選ぶ、todoは使わないので、_で表せる！
   } //indexを第二引数に取ることで、同じ文字を追加した際もきちんと判別ができる
   return (
     <>
       <input type="text" value={newItem} onChange={ (e) => setNewItem(e.target.value)} placeholder="入力してください" />
       <button onClick={ () => onClickAdd()}>追加</button>
       <ul>
-        リスト👇 {todos.map( (todo, index) => <li key={index}> {todo} <button onClick={ () => onClickDeleted(index)}>削除</button> </li> )}
+        リスト👇 {todos.map( (todo) => <li key={todo.id}> {todo.text} <button onClick={ () => onClickDeleted(todo.id)}>削除</button> </li> )}
       </ul>
     </>
   ) //アロー関数でindexを削除することを実行できるようにする
