@@ -414,16 +414,34 @@ return (<button onClick={totalCount}>カウントアップ！</button>) //これ
   )
 }*/
 
-export function App(){
+/*export function App(){
   const [input, setInput] = useState(localStorage.getItem("input") || ""); //読み込み時の状態管理（論理演算子は予防のために使う！最初にinputに何も書いていない時、nullが返るとエラーになる可能性があるから
   useEffect( () => { //保存するための処理
     localStorage.setItem("input", input); //getItem("")とキーで繋がっている
-  }, [input]) 
+  }, [input])  //今回クリーンアップ関数が不要だったのは、保存するだけだったから
   return (
     <>
       <textarea type="textarea" value={input} onChange={ (e) => setInput(e.target.value)} placeholder="入力してください" />
-      <p>{input}</p> 
+      <p>{input}</p>
     </>
   ) //HTMLにおいて、<textarea>というタグがある！
+}*/
+
+/*### Q26. リアルタイム時計
+現在の時刻（時:分:秒）を1秒ごとに更新して表示する時計を作ってください。
+*   **Hooks:** `useState`, `useEffect`*/
+export function App (){
+  const  [count, setCount] = useState(0);
+  useEffect( () => { //setInterval()は()の中を繰り返し処理するためのメソッド
+    const timer = setInterval( () => { //new Date()...時計ロボットであり、作られた瞬間の時間を記憶してくれる
+      setCount(new Date().toLocaleTimeString()); //toLocalTimeString()...その国によって読みやすい形に数字を表示してくれるメソッド
+    }, 1000) //これはnew Date()のデータの引き出し方であり、他にも年や月のみを呼び出すことができる
+    return () => clearInterval(timer) //クリーンアップ関数はuseEffect()内で何かをスタートさせた時にセットでストップする！
+  }, [])
+  return (
+    <>
+      {count}
+    </>
+  )
 }
 
