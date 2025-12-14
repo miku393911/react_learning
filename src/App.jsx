@@ -414,3 +414,16 @@ return (<button onClick={totalCount}>カウントアップ！</button>) //これ
   )
 }*/
 
+export function App(){
+  const [input, setInput] = useState(localStorage.getItem("input") || ""); //読み込み時の状態管理（論理演算子は予防のために使う！最初にinputに何も書いていない時、nullが返るとエラーになる可能性があるから
+  useEffect( () => { //保存するための処理
+    localStorage.setItem("input", input); //getItem("")とキーで繋がっている
+  }, [input]) 
+  return (
+    <>
+      <textarea type="textarea" value={input} onChange={ (e) => setInput(e.target.value)} placeholder="入力してください" />
+      <p>{input}</p> 
+    </>
+  ) //HTMLにおいて、<textarea>というタグがある！
+}
+
