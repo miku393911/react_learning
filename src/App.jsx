@@ -414,7 +414,7 @@ return (<button onClick={totalCount}>カウントアップ！</button>) //これ
   )
 }*/
 
-export function App(){ //localStorage()はwindow.localStorageというウィンドウ全体をを管理していりもののプロパティ（windowは省略して書けるので、localStorageが最初に来る！
+/*export function App(){ //localStorage()はwindow.localStorageというウィンドウ全体をを管理していりもののプロパティ（windowは省略して書けるので、localStorageが最初に来る！
   const [input, setInput] = useState(localStorage.getItem("input") || ""); //読み込み時の状態管理（論理演算子は予防のために使う！最初にinputに何も書いていない時、nullが返るとエラーになる可能性があるから
   useEffect( () => { //保存するための処理
     localStorage.setItem("input", input); //getItem("")とキーで繋がっている
@@ -425,7 +425,7 @@ export function App(){ //localStorage()はwindow.localStorageというウィン�
       <p>{input}</p>
     </>
   ) //HTMLにおいて、<textarea>というタグがある！
-}
+}*/
 
 /*export function App (){
   const  [count, setCount] = useState(0);
