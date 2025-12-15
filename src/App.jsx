@@ -427,10 +427,7 @@ return (<button onClick={totalCount}>カウントアップ！</button>) //これ
   ) //HTMLにおいて、<textarea>というタグがある！
 }*/
 
-/*### Q26. リアルタイム時計
-現在の時刻（時:分:秒）を1秒ごとに更新して表示する時計を作ってください。
-*   **Hooks:** `useState`, `useEffect`*/
-export function App (){
+/*export function App (){
   const  [count, setCount] = useState(0);
   useEffect( () => { //setInterval()は()の中を繰り返し処理するためのメソッド
     const timer = setInterval( () => { //new Date()...時計ロボットであり、作られた瞬間の時間を記憶してくれる
@@ -443,5 +440,39 @@ export function App (){
       {count}
     </>
   )
+}*/
+
+/*export function App (){
+  const [email, setEmail] = useState(""); //メールアドレス入力欄の状態管理
+  const [password, setPassword] = useState(""); //パスワード入力欄の状態管理
+  const [errorEmail, setErrorEmail] = useState("") //メールアドレスのエラーメッセージを保存する用のuseState()
+  const [errorPassword, setErrorPassword] = useState("") //パスワードのエラーメッセージを保存する用のuseState()
+  useEffect( () => {
+    setErrorEmail(email.length === 0 ? "" : (email.includes("@") ? "" : "メールアドレスが正しくありません"))
+    setErrorPassword(password.length === 0 ? "" : (password.length >= 8 ? "" : "パスワードが正しくありません"))
+  }, [email, password]) //依存関係配列は複数OK!
+  return (
+    <>
+      <input type="text" value={email} onChange={ (e) => setEmail(e.target.value)} placeholder="メールアドレスを入力してください" />
+      <p style={{color: email.includes("@") ? "black" : "red"}}>{errorEmail}</p>
+      <input type="text" value={password} onChange={ (e) => setPassword(e.target.value)} placeholder="パスワードを入力してください" />
+      <p style={{color: password.length >= 8 ? "black" : "red"}}>{errorPassword}</p>
+    </>
+  ) //今回のコードでは、@や8文字以上になるまでエラーメッセージが出続けるが、本来のアプリではこれ対策のコードもある！
+}*/
+
+export function App(){
+  const [isOpen, setIsOpen] = useState(false); //ポップアップの表示を管理する
+  return ( //デフォルトはfailseで閉じている状態なので、開くボタンを最初に表示する
+    <>
+      <button onClick={ () => setIsOpen(true)}>開く</button>
+      {isOpen && ( //開くボタンが押された時の処理を書く（論理演算子で書く
+        <div>
+          <p>ポップアップです</p>
+          <button onClick={ () => setIsOpen(false)}>閉じる</button>
+        </div>
+      )}
+    </> //開くボタンを押すと、ポップアップの内容と閉じるボタンが出現！
+  ) //背景クリックでも閉じるようにできるが、CSSを駆使する（position: fixedを使って浮かせる感じ）ので今はしない笑
 }
 
