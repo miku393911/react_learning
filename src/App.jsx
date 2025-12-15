@@ -461,18 +461,56 @@ return (<button onClick={totalCount}>カウントアップ！</button>) //これ
   ) //今回のコードでは、@や8文字以上になるまでエラーメッセージが出続けるが、本来のアプリではこれ対策のコードもある！
 }*/
 
-export function App(){
+/*export function App(){
   const [isOpen, setIsOpen] = useState(false); //ポップアップの表示を管理する
-  return ( //デフォルトはfailseで閉じている状態なので、開くボタンを最初に表示する
+  return ( //デフォルトはfailseで閉じている状態なので、最初に開くボタンを表示する
     <>
       <button onClick={ () => setIsOpen(true)}>開く</button>
       {isOpen && ( //開くボタンが押された時の処理を書く（論理演算子で書く
-        <div>
+        <div style={{backgroundColor: "lightblue"}}>
           <p>ポップアップです</p>
           <button onClick={ () => setIsOpen(false)}>閉じる</button>
         </div>
       )}
     </> //開くボタンを押すと、ポップアップの内容と閉じるボタンが出現！
   ) //背景クリックでも閉じるようにできるが、CSSを駆使する（position: fixedを使って浮かせる感じ）ので今はしない笑
+}*/
+
+/*### Q29. 簡易クイズアプリ (総合)
+問題文と選択肢が配列で用意されています。
+回答するたびに次の問題に進み、最後に正解数を表示してください。
+*   **Hooks:** `useState` (現在の問題番号、スコア)*/
+export function App(){
+  const [number, setNumber] = useState(0); //現在の問題番号の状態を管理
+  const [score, setScore] = useState(0); //現在のスコアを管理
+  const tests = [ //解答欄の状態管理は不要（問題番号で、回答するたびに次の問題に進むから保存する必要がない
+    {question: "りんごを英語で何と言う？", choices: ["Apple", "Banana", "Cat"], answer: "Apple"},
+    {question: "みかんを英語で何と言う？", choices: ["Dog", "Orange", "Grape"], answer: "Orange"},
+    {question: "ももを英語で何と言う？", choices: ["Mascat", "Monkey", "Peach"], answer: "Peach"},
+  ] //配列をオブジェクトに書くこともできる！
+  if(number >= tests.length){ //結果発表画面を作る（現在の問題数が配列の問題数を超えてしまった場合に終了する
+    return ( //最初にこの条件分岐を書くことで、エラーが消える
+      <div>
+        <h2>結果発表！</h2>
+        <p>スコア: {score}点</p>
+      </div>
+    )
+  }
+  const onClick = (choice) => { //ボタンが押されたら自動で次の問題並行するように
+    if(choice === tests[number].answer){ //もし正解なら、現在のスコアを+1する（選んだ答えとtests配列の現在の問題番号の答えが一致していたら
+      setScore(score + 1);
+    }
+    setNumber(number + 1); //問題の番号も+1するのは正解不正解にかかわらずデフォルトで絶対に行われる処理
+  }
+  return ( //<h1>タグは問題文を表示するコード（tests配列の現在の問題番号の問題文を表示
+    <>
+      <div>
+        <h1>{tests[number].question}</h1>
+        <div>
+          {tests[number].choices.map( (choice) => <button key={choice} onClick={ () => onClick(choice)}>{choice}</button> )}
+        </div>
+      </div>
+    </>
+  ) //<div>タグはtests配列の現在の問題番号の選択肢を.map()メソッドで<button>タグとして並べる
 }
 
