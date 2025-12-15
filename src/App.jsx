@@ -414,18 +414,18 @@ return (<button onClick={totalCount}>カウントアップ！</button>) //これ
   )
 }*/
 
-/*export function App(){
+export function App(){ //localStorage()はwindow.localStorageというウィンドウ全体をを管理していりもののプロパティ（windowは省略して書けるので、localStorageが最初に来る！
   const [input, setInput] = useState(localStorage.getItem("input") || ""); //読み込み時の状態管理（論理演算子は予防のために使う！最初にinputに何も書いていない時、nullが返るとエラーになる可能性があるから
   useEffect( () => { //保存するための処理
     localStorage.setItem("input", input); //getItem("")とキーで繋がっている
   }, [input])  //今回クリーンアップ関数が不要だったのは、保存するだけだったから
-  return (
+  return ( //<textarea>タグにtype属性はない！
     <>
-      <textarea type="textarea" value={input} onChange={ (e) => setInput(e.target.value)} placeholder="入力してください" />
+      <textarea value={input} onChange={ (e) => setInput(e.target.value)} placeholder="入力してください" />
       <p>{input}</p>
     </>
   ) //HTMLにおいて、<textarea>というタグがある！
-}*/
+}
 
 /*export function App (){
   const  [count, setCount] = useState(0);
@@ -476,11 +476,7 @@ return (<button onClick={totalCount}>カウントアップ！</button>) //これ
   ) //背景クリックでも閉じるようにできるが、CSSを駆使する（position: fixedを使って浮かせる感じ）ので今はしない笑
 }*/
 
-/*### Q29. 簡易クイズアプリ (総合)
-問題文と選択肢が配列で用意されています。
-回答するたびに次の問題に進み、最後に正解数を表示してください。
-*   **Hooks:** `useState` (現在の問題番号、スコア)*/
-export function App(){
+/*export function App(){
   const [number, setNumber] = useState(0); //現在の問題番号の状態を管理
   const [score, setScore] = useState(0); //現在のスコアを管理
   const tests = [ //解答欄の状態管理は不要（問題番号で、回答するたびに次の問題に進むから保存する必要がない
@@ -512,5 +508,5 @@ export function App(){
       </div>
     </>
   ) //<div>タグはtests配列の現在の問題番号の選択肢を.map()メソッドで<button>タグとして並べる
-}
+}*/
 
