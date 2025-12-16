@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import "./style.css";
 
 /*export function App (){
@@ -510,3 +510,43 @@ return (<button onClick={totalCount}>カウントアップ！</button>) //これ
   ) //<div>タグはtests配列の現在の問題番号の選択肢を.map()メソッドで<button>タグとして並べる
 }*/
 
+/*### Q30. ユーザー登録と一覧 (総合)
+*   名前と年齢を入力して「登録」するフォーム
+*   登録されたユーザーの一覧表示
+*   一覧からユーザーを「削除」する機能
+これらを組み合わせた簡易アプリを作ってください。
+*   **Hooks:** `useState` (配列操作の総まとめ)*/
+export function App(){
+  const [name, setName] = useState(""); //名前の入力欄を状態管理する
+  const [age, setAge] = useState(""); //年齢の入力欄を状態管理する
+  const [users, setUsers] = useState([]); //登録リストの状態管理　初期値は空配列
+  const onClickAdd = () => {
+    if(name === "" || age === "") return;
+    const newUsers = {id: Math.random(), name: name, age: age};  //オブジェクトごと作ってあげる
+    setUsers([...users, newUsers]);
+    setName("");
+    setAge("");
+  }
+  const onClickDelete = (deletedId) => {
+    const newUsers = [...users];
+    setUsers(newUsers.filter( (user) => user.id !== deletedId));
+  }
+  return (
+    <>
+      <div>
+        <input value={name} onChange={ (e) => setName(e.target.value) } placeholder="名前を入力してください"/>
+        <input value={age} onChange={ (e) => setAge(e.target.value) } placeholder="年齢を入力してください"/>
+        <button onClick={ () => onClickAdd()} >登録</button>
+      </div>
+      <div>
+        <p>登録リスト👇</p>
+        <ul>
+          { users.map( (user) => 
+            <li key={user.id}>{user.name}({user.age}歳)
+              <button onClick={ () => onClickDelete(user.id)}>削除</button>
+            </li>)}
+        </ul>
+      </div>
+    </>
+  )
+}
