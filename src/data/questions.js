@@ -33,10 +33,7 @@ import { Q31_UserRegister } from "../components/vol1/Q31_UserRegister";
 // #endregion
 
 // #region Vol2 (Q32+)
-import { Q32_ThemeSwitcher } from "../components/vol2/Q32_ThemeSwitcher";
-import { Q33_TodoEdit } from "../components/vol2/Q33_TodoEdit";
-import { Q34_ApiFetch } from "../components/vol2/Q34_ApiFetch";
-// #endregion
+import { Q32_Favorite } from "../components/vol2/Q32_Favorite.jsx";
 
 /**
  * 問題リスト
@@ -79,7 +76,5 @@ export const questionList = [
     { id: "Q30", component: Q30_Quiz, label: "Q30: Quiz", volume: 1 },
     { id: "Q31", component: Q31_UserRegister, label: "Q31: User Register (Comprehensive)", volume: 1 },
     // Vol2
-    { id: "Q32", component: Q32_ThemeSwitcher, label: "Q32: Theme Switcher", volume: 2 },
-    { id: "Q33", component: Q33_TodoEdit, label: "Q33: Todo Edit", volume: 2 },
-    { id: "Q34", component: Q34_ApiFetch, label: "Q34: API Fetch", volume: 2 },
+    { id: "Q32", component: Q32_Favorite, label: "Q32: Favorite", volume: 2 },
 ];
