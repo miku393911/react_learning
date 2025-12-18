@@ -1,13 +1,13 @@
 import { useState } from "react";
 
 export function Q06_Login() {
-    const [login, setLogin] = useState(false);
+    const [isLogin, setIsLogin] = useState(false);
     return (
         <>
-            {login ? (<> <p>ようこそ！ユーザーさん</p>
-                <button onClick={() => { setLogin(!login) }}>ログアウトボタン</button> </>) :
+            {isLogin ? (<> <p>ようこそ！ユーザーさん</p>
+                <button onClick={() => { setIsLogin(!isLogin) }}>ログアウトボタン</button> </>) :
                 (<> <p>ログインしてください</p>
-                    <button onClick={() => { setLogin(!login) }}>ログインボタン</button> </>)
+                    <button onClick={() => { setIsLogin(!isLogin) }}>ログインボタン</button> </>)
             }
         </>
     );
