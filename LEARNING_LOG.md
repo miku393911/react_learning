@@ -31,4 +31,3 @@
     ```jsx
     setIsOn(prev => !prev);
     ```
-
