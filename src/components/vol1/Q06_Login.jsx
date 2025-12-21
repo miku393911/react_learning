@@ -10,5 +10,5 @@ export function Q06_Login() {
                     <button onClick={() => setIsLogin(prev => !prev)}>ログインボタン</button> </>)
             }
         </>
-    ); //より安全なコードにするために、同期的に処理をするためのprev
+    ); //非同期処理を行い、最新の状態をレンダリングするためのprev
 }
