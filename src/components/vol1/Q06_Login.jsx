@@ -5,10 +5,10 @@ export function Q06_Login() {
     return (
         <>
             {isLogin ? (<> <p>ようこそ！ユーザーさん</p>
-                <button onClick={() => { setIsLogin(!isLogin) }}>ログアウトボタン</button> </>) :
+                <button onClick={() => setIsLogin(prev => !prev)}>ログアウトボタン</button> </>) :
                 (<> <p>ログインしてください</p>
-                    <button onClick={() => { setIsLogin(!isLogin) }}>ログインボタン</button> </>)
+                    <button onClick={() => setIsLogin(prev => !prev)}>ログインボタン</button> </>)
             }
         </>
-    );
+    ); //より安全なコードにするために、同期的に処理をするためのprev
 }
