@@ -11,9 +11,9 @@
 
 現在の学習進捗に合わせて、以下のボリュームから問題を選択して挑戦できます。
 
-- **[Vol. 1: Basic Patterns](./vol1/README.md)** (Q1 - Q31)
+- **[Vol. 1: Basic Patterns](./src/components/vol1/README.md)** (Q1 - Q31)
   - 基本的なState管理、条件分岐、リストレンダリング
-- **[Vol. 2: Practical Logic](./vol2/README.md)** (Q32 - Q61)
+- **[Vol. 2: Practical Logic](./src/components/vol2/README.md)** (Q32 - Q61)
   - 引数付きイベント、型の同期、複雑な副作用、UIコンポーネント設計
 
 ## 🛠 技術スタック
@@ -33,12 +33,10 @@
 
 ```text
 .
-├── vol1/               # Vol.1 問題文 (基礎)
-├── vol2/               # Vol.2 問題文 (応用・実践)
 ├── src/
-│   ├── components/     # コンポーネント実装
-│   │   ├── vol1/
-│   │   └── vol2/
+│   ├── components/     # コンポーネント実装 & 問題文
+│   │   ├── vol1/       # Vol.1 解答 & README.md
+│   │   └── vol2/       # Vol.2 解答 & README.md
 │   ├── data/           # 問題リスト定義
 │   └── App.jsx         # メインエントリー
 └── LEARNING_LOG.md     # 学習ログ・解説
