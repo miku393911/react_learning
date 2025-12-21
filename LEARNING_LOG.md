@@ -82,3 +82,13 @@
     {() => setMaxNumber( prev => Math.max(prev, Number(count)))};
      ```
 
+### Q8. 成績判定 (条件分岐)
+**出題内容**: 点数によって評価をA~Dで判定する
+**使用したHooks**: `useState`
+*   **学んだこと**:
+    * 型を合わせてバグを防ぐ必要があるということ/ 三項演算子は可読性が低い
+*   **コードのポイント**:
+    ```jsx
+    const num = Number(num);
+     ```
+
