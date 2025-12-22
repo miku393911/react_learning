@@ -34,7 +34,7 @@ export function Q10_Calculator() {
             case "-": result = l - r; break;
             case "*": result = l * r; break;
             case "/": 
-                result = r !== 0 ?  l / r : "Error（0除算）";
+                result = r === 0 ? "Error（0除算）": l / r;
                 break;
             default: break;
         }
