@@ -89,7 +89,7 @@
     * 型を合わせてバグを防ぐ必要があるということ/ 三項演算子は可読性が低い
 *   **コードのポイント**:
     ```jsx
-    const num = Number(num);
+    const num = Number(score);
      ```
 
 ### Q9. 背景色スイッチャー (Switch文ロジック)
@@ -100,5 +100,15 @@
 *   **コードのポイント**:
     ```jsx
     <div style={{ backGroundColor : bgColor(), width: "155px", height: "25px", borderRadius: "5px"}}> //以下<select>タグや<option>タグが続く
+     ```
+
+### Q10. シンプルな電卓 (ロジック)
+**出題内容**: 2つの数値入力欄と「足す」「引く」「掛ける」「割る」ボタンで計算結果表示
+*   **使用したHooks**: `useState`
+*   **学んだこと**:
+    * 関数の条件分岐としてswitch文を使うこと/ <input type="number">であっても文字のため、数値としての型合わせが必要
+*   **コードのポイント**:
+    ```jsx
+    switch(operator){case "+": result = l + r; break; // 以下switch文のcaseが続く}
      ```
 
