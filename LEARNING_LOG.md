@@ -112,3 +112,14 @@
     switch(operator){case "+": result = l + r; break; // 以下switch文のcaseが続く}
      ```
 
+## Part 2: 配列とコールバック
+
+### Q11. 名簿の表示 (map)
+**出題内容**: 配列データをリスト表示
+*   **学んだこと**:
+    * .map()メソッド使う際に限らず、リスト化する際は<li>タグごと生成すれば良いこと
+*   **コードのポイント**:
+    ```jsx
+    {names.map( (name) => <li key={name}>{name}</li>)}
+     ```
+
