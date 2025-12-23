@@ -141,3 +141,12 @@
     <onChange={(e) => setIsActive(e.target.checked)}
      ```
 
+### Q14. ユーザー検索 (filter/includes)
+**出題内容**: 入力した文字が名前に含まれるユーザーをリアルタイムで絞り込み表示
+*   **使用したHooks**: `useState`
+*   **学んだこと**: 検索対象が空の時の処理と検索結果が0件の処理（メッセージ表記）が必要だということ
+*   **コードのポイント**:
+    ```jsx
+    const newText = text.trim() === "" ? userDate : userDate.filter((user) => user.name.toLowerCase().includes(text.toLowerCase().trim()));
+     ```
+
