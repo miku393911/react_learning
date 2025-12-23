@@ -150,3 +150,12 @@
     const newText = text.trim() === "" ? userDate : userDate.filter((user) => user.name.toLowerCase().includes(text.toLowerCase().trim()));
      ```
 
+### Q15. 特定のユーザーを探す (find)
+**出題内容**: ID入力後、検索ボタン押す -> 該当IDのユーザー名表示、見つからない場合は「見つかりません」と表示
+*   **使用したHooks**: `useState`
+*   **学んだこと**: 条件分岐が3個以上ある場合や関数内に書く場合はif文を用いるということ/ return内は三項演算子
+*   **コードのポイント**:
+    ```jsx
+    if(text === ""){setResult("IDを入力してください");} //以下、IDが一致した場合としなかった場合でif文が続く
+    ```
+
