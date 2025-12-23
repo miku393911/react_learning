@@ -17,3 +17,18 @@ export function Q15_FindUser() {
         </>
     );
 }
+
+// 現場向き
+// Q14同様、静的データは関数外に配置
+// 入力欄が空白の場合の結果テキストの表示も必要、if文を関数内に書き、onClick={handleSearch}として呼び出すのもOK
+const handleSearch = () => {
+    const searchId = Number(text);
+    const foundUsers = userDate.find((user) => user.id === searchId);
+    if(text === ""){
+        setResult("IDを入力してください");
+    }else if(foundUsers){
+        setResult(foundUsers.name );
+    }else {
+        setResult("見つかりませんでした");
+    }
+}
