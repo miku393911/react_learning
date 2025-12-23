@@ -42,7 +42,7 @@ export function Q10_Calculator() {
     }
     return (
         <>
-            <input type="number" value={left} onChange={ (e) => setLeft(e.target.value)} />
+            <input type="number" value={left} onChange={(e) => setLeft(e.target.value)} />
             <button onClick={ () => calculation("+")}>足す</button>
             <button onClick={ () => calculation("-")}>引く</button>
             <button onClick={ () => calculation("*")}>掛ける</button>

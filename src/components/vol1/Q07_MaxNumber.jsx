@@ -36,7 +36,7 @@ export function Q07_MaxNumber(){
     return (
         <>
             <input value={number} onChange={ (e) => setNumber(e.target.value)} placeholder="数値を入力してください" />
-            <button onClick={ () => onClickUpdate()}>更新</button>
+            <button onClick={() => onClickUpdate()}>更新</button>
             <p>最大値: {maxNumber}</p>
         </>
     )

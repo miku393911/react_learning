@@ -16,7 +16,7 @@ export function Q11_NamesList() {
     ];
     return(
         <ul>
-            {usersList.map( (user) => <li key={user.id}>{user.name}</li>)}
+            {usersList.map((user) => <li key={user.id}>{user.name}</li>)}
         </ul>
     )
 }

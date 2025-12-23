@@ -32,15 +32,15 @@ const users = [ // 動的データは、関数外に書くのが定石
 ]
 export function Q13_FilterActive() {
     const [isActive, setIsActive] = useState(false);
-    const newActive = isActive ? users.filter( (user) => user.isActive) : users; //isActiveがtrueかfalseかの判定
+    const newActive = isActive ? users.filter((user) => user.isActive) : users; //isActiveがtrueかfalseかの判定
     return ( //e.target.checkedで、現在のチェックボックスの状態をそのままStateに反映する意味になる
         <>
             <label>
-                <input type="checkbox" checked={isActive} onChange={ (e) => setIsActive(e.target.checked)} />
+                <input type="checkbox" checked={isActive} onChange={(e) => setIsActive(e.target.checked)} />
             </label>
             <ul>
-                {newActive.map( (user) => <li key={user.id}>{user.name}</li>)}
+                {newActive.map((user) => <li key={user.id}>{user.name}</li>)}
             </ul>
         </>
-    ) //isActiveを判定した変数をmapでもう1度配置するイメージ
+    ) //isActiveを判定した変数をmapでもう1度配置するイメージ、メソッドチェーンを用いて変数を使わずに続けて書くことも可能
 }

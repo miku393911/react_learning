@@ -29,7 +29,7 @@ export function Q12_UserCardList() {
     ];
     return (
         <ul>
-            {users.map( (user) => (<UserCard key={user.id} {...user} />))} 
+            {users.map((user) => (<UserCard key={user.id} {...user} />))} 
         </ul>
     ) // 分割代入 + props名と引数名が同じだから省略可能
 }

@@ -22,7 +22,7 @@ export function Q08_Grade(){
     }
     return(
         <>
-            <input type="number" value={score} onChange={ (e) => setScore(e.target.value) } placeholder="数値を入力してください" />
+            <input type="number" value={score} onChange={(e) => setScore(e.target.value) } placeholder="数値を入力してください" />
             <p>評価: {getScore()}</p>
         </>
     )
