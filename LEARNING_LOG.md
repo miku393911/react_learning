@@ -109,7 +109,7 @@
     * 関数の条件分岐としてswitch文を使うこと/ <input type="number">であっても文字のため、数値としての型合わせが必要
 *   **コードのポイント**:
     ```jsx
-    switch(operator){case "+": result = l + r; break; // 以下switch文のcaseが続く}
+    switch(operator){case "+": result = l + r; break; /*以下switch文のcaseが続く*/ }
      ```
 
 ## Part 2: 配列とコールバック
@@ -120,15 +120,24 @@
     * .map()メソッド使う際に限らず、リスト化する際は<li>タグごと生成すれば良いこと
 *   **コードのポイント**:
     ```jsx
-    {names.map( (name) => <li key={name}>{name}</li>)}
+    {names.map((name) => <li key={name}>{name}</li>)}
      ```
 
 ### Q12. ユーザーカード (コンポーネント分割)
-**出題内容**: コンポーネントを使い、親と子の間で引数を渡す
+**出題内容**: コンポーネントを使い、親のデータを引数を使い、子に渡す
 *   **学んだこと**:
     * Reactに限らず、データは親から子へ渡されること + 分割代入の有効な使い時
 *   **コードのポイント**:
     ```jsx
     function UserCard( {name, age} ) {/*以下、子コンポーネントが続く*/ }
+     ```
+
+### Q13. アクティブユーザーのみ表示 (filter)
+**出題内容**: チェックボックスを使い、`isActive: true` のユーザーのみ表示
+*   **使用したHooks**: `useState`
+*   **学んだこと**: e.target.checkedという、現在のチェックボックスの状態をそのままStateに保存するプロパティがあること
+*   **コードのポイント**:
+    ```jsx
+    <onChange={(e) => setIsActive(e.target.checked)}
      ```
 
