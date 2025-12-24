@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export function Q27_EffectValidation() {
+export function Q26_EffectValidation() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errorEmail, setErrorEmail] = useState("")

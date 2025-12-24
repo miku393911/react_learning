@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export function Q24_EffectStatus() {
+export function Q23_EffectStatus() {
     const [status, setStatus] = useState("読み込み中...");
     useEffect(() => {
         const timer = setTimeout(() => {

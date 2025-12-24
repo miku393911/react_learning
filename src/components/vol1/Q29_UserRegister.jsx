@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function Q30_UserRegister() {
+export function Q29_UserRegister() {
     const [name, setName] = useState("");
     const [age, setAge] = useState("");
     const [users, setUsers] = useState([]);

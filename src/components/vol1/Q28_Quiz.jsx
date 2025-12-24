@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function Q29_Quiz() {
+export function Q28_Quiz() {
     const [number, setNumber] = useState(0);
     const [score, setScore] = useState(0);
     const tests = [
