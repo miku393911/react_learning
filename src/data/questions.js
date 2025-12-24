@@ -18,21 +18,21 @@ import { Q16_TodoList } from "../components/vol1/Q16_TodoList";
 import { Q17_ArticleList } from "../components/vol1/Q17_ArticleList";
 import { Q18_ShoppingCart } from "../components/vol1/Q18_ShoppingCart";
 import { Q19_TabsObject } from "../components/vol1/Q19_TabsObject";
-import { Q20_TabsArray } from "../components/vol1/Q20_TabsArray";
-import { Q21_EffectTitle } from "../components/vol1/Q21_EffectTitle";
-import { Q22_EffectWidth } from "../components/vol1/Q22_EffectWidth";
-import { Q23_EffectTimer } from "../components/vol1/Q23_EffectTimer";
-import { Q24_EffectStatus } from "../components/vol1/Q24_EffectStatus";
-import { Q25_EffectStorage } from "../components/vol1/Q25_EffectStorage";
-import { Q26_EffectClock } from "../components/vol1/Q26_EffectClock";
-import { Q27_EffectValidation } from "../components/vol1/Q27_EffectValidation";
-import { Q28_Popup } from "../components/vol1/Q28_Popup";
-import { Q29_Quiz } from "../components/vol1/Q29_Quiz";
-import { Q30_UserRegister } from "../components/vol1/Q30_UserRegister";
+import { Q20_EffectTitle } from "../components/vol1/Q20_EffectTitle";
+import { Q21_EffectWidth } from "../components/vol1/Q21_EffectWidth";
+import { Q22_EffectTimer } from "../components/vol1/Q22_EffectTimer";
+import { Q23_EffectStatus } from "../components/vol1/Q23_EffectStatus";
+import { Q24_EffectStorage } from "../components/vol1/Q24_EffectStorage";
+import { Q25_EffectClock } from "../components/vol1/Q25_EffectClock";
+import { Q26_EffectValidation } from "../components/vol1/Q26_EffectValidation";
+import { Q27_Popup } from "../components/vol1/Q27_Popup";
+import { Q28_Quiz } from "../components/vol1/Q28_Quiz";
+import { Q29_UserRegister } from "../components/vol1/Q29_UserRegister";
+import { Q30_Favorite } from "../components/vol1/Q30_Favorite";
 // #endregion
 
 // #region Vol2 (Q31-Q60)
-import { Q31_Favorite } from "../components/vol2/Q31_Favorite.jsx";
+import { Q31_Placeholder } from "../components/vol2/Q31_Placeholder.jsx";
 import { Q32_Placeholder } from "../components/vol2/Q32_Placeholder.jsx";
 import { Q33_Placeholder } from "../components/vol2/Q33_Placeholder.jsx";
 import { Q34_Placeholder } from "../components/vol2/Q34_Placeholder.jsx";
@@ -92,20 +92,20 @@ export const questionList = [
     { id: "Q17", component: Q17_ArticleList, label: "Q17: Article List", volume: 1 },
     { id: "Q18", component: Q18_ShoppingCart, label: "Q18: Shopping Cart", volume: 1 },
     { id: "Q19", component: Q19_TabsObject, label: "Q19: Tabs (Object)", volume: 1 },
-    { id: "Q20", component: Q20_TabsArray, label: "Q20: Tabs (Array)", volume: 1 },
-    { id: "Q21", component: Q21_EffectTitle, label: "Q21: Effect Title", volume: 1 },
-    { id: "Q22", component: Q22_EffectWidth, label: "Q22: Effect Width", volume: 1 },
-    { id: "Q23", component: Q23_EffectTimer, label: "Q23: Effect Timer (Countdown)", volume: 1 },
-    { id: "Q24", component: Q24_EffectStatus, label: "Q24: Effect Status", volume: 1 },
-    { id: "Q25", component: Q25_EffectStorage, label: "Q25: Effect Storage", volume: 1 },
-    { id: "Q26", component: Q26_EffectClock, label: "Q26: Effect Clock", volume: 1 },
-    { id: "Q27", component: Q27_EffectValidation, label: "Q27: Effect Validation", volume: 1 },
-    { id: "Q28", component: Q28_Popup, label: "Q28: Popup", volume: 1 },
-    { id: "Q29", component: Q29_Quiz, label: "Q29: Quiz", volume: 1 },
-    { id: "Q30", component: Q30_UserRegister, label: "Q30: User Register (Comprehensive)", volume: 1 },
+    { id: "Q20", component: Q20_EffectTitle, label: "Q20: Tabs (Array)", volume: 1 },
+    { id: "Q21", component: Q21_EffectWidth, label: "Q21: Effect Title", volume: 1 },
+    { id: "Q22", component: Q22_EffectTimer, label: "Q22: Effect Width", volume: 1 },
+    { id: "Q23", component: Q23_EffectStatus, label: "Q23: Effect Timer (Countdown)", volume: 1 },
+    { id: "Q24", component: Q24_EffectStorage, label: "Q24: Effect Status", volume: 1 },
+    { id: "Q25", component: Q25_EffectClock, label: "Q25: Effect Storage", volume: 1 },
+    { id: "Q26", component: Q26_EffectValidation, label: "Q26: Effect Clock", volume: 1 },
+    { id: "Q27", component: Q27_Popup, label: "Q27: Effect Validation", volume: 1 },
+    { id: "Q28", component: Q28_Quiz, label: "Q28: Popup", volume: 1 },
+    { id: "Q29", component: Q29_UserRegister, label: "Q29: Quiz", volume: 1 },
+    { id: "Q30", component: Q30_Favorite, label: "Q30: User Register (Comprehensive)", volume: 1 },
 
     // Vol2 - Stage 1
-    { id: "Q31", component: Q31_Favorite, label: "Q31: 引数付きイベント(アロー関数)", volume: 2 },
+    { id: "Q31", component: Q31_Placeholder, label: "Q31: 引数付きイベント(アロー関数)", volume: 2 },
     { id: "Q32", component: Q32_Placeholder, label: "Q32: 安全な数値計算(型変換)", volume: 2 },
     { id: "Q33", component: Q33_Placeholder, label: "Q33: 論理演算子による条件表示", volume: 2 },
     { id: "Q34", component: Q34_Placeholder, label: "Q34: 三項演算子スタイル切替", volume: 2 },
