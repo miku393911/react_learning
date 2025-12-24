@@ -177,3 +177,12 @@
     setArticles((pervArticles) => prevArticles.map((article) => article.id === id ? {...article, likes: article.likes + 1} : article));
     ```
 
+### Q18. ショッピングカート合計 (reduce/計算)
+**出題内容**: 商品名と値段が入った配列があり、カートの商品の合計金額を常時計算して表示
+*   **使用したHooks**: `useState`
+*   **学んだこと**: 引数を複数使う際、_を用いて、使わない引数を表せること
+*   **コードのポイント**:
+    ```jsx
+    setCartItems(cartItems.filter((_, index) => index !== deletedIndex));
+    ```
+
