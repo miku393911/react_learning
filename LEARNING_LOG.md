@@ -168,3 +168,12 @@
     setTodos(todos.filter((todo) => todo.id !== deletedId));
     ```
 
+### Q17. いいねボタン (配列内のオブジェクト更新)
+**出題内容** 記事のリストそれぞれに「いいね！」ボタンがあり、押すと1増える仕組み
+*   **使用したHooks**: `useState`
+*   **学んだこと**: 配列のオブジェクトのプロパティを条件分岐によって追加する方法があること
+*   **コードのポイント**:
+    ```jsx
+    setArticles((pervArticles) => prevArticles.map((article) => article.id === id ? {...article, likes: article.likes + 1} : article));
+    ```
+
