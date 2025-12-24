@@ -209,9 +209,18 @@
 **出題内容**: ウィンドウサイズをリアルタイムで更新
 *   **Hooks:** `useState`, `useEffect`
 *   **ヒント:** `window.addEventListener` と `removeEventListener`
-*   **学んだこと**: window.InnerWidthというウィンドウの内側の幅を教えるプロパティがあること
+*   **学んだこと**: `window.InnerWidth`というウィンドウの内側の幅を教えるプロパティがあること
 *   **コードのポイント**:
     ```jsx
     useState(window.innerWidth);
+    ```
+
+### Q22. カウントダウンタイマー (useEffect + setInterval)
+**出題内容**: ボタンを押すと10秒からカウンドダウン、0秒で終了！のメッセージ表示
+*   **Hooks:** `useState`, `useEffect`
+*   **学んだこと**: disabled={}でボタンの無効化条件を書くことができること
+*   **コードのポイント**:
+    ```jsx
+    <button onCLick={() => {setCount(10)} disabled={count !== null $$ count > 0}}> "スタート！" </button>
     ```
 
