@@ -195,3 +195,12 @@
     const [activeTab, setActiveTab] = useState(tabs[0].id);
     ```
 
+### Q20. タイトル更新 (useEffect)
+**出題内容**: ボタンクリックでカウントアップし、そのカウントをブラウザタブに表示
+*   **Hooks:** `useState`, `useEffect`
+*   **学んだこと**: `document.title`で、ブラウザタブのタイトルが変更可能ということ
+*   **コードのポイント**:
+    ```jsx
+    useEffect(() => {document.title = `現在のカウント: ${count}`;}. [count]);
+    ```
+
