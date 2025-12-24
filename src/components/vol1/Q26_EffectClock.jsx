@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export function Q27_EffectClock() {
+export function Q26_EffectClock() {
     const [count, setCount] = useState(0);
     useEffect(() => {
         const timer = setInterval(() => {

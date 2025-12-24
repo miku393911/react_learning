@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function Q21_TabsArray() {
+export function Q20_TabsArray() {
     const [activeTab, setActiveTab] = useState(0);
     const contents = ["タブ1の内容です", "タブ2の内容です", "タブ3の内容です"];
     return (

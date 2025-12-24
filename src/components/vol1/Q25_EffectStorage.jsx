@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export function Q26_EffectStorage() {
+export function Q25_EffectStorage() {
     const [input, setInput] = useState(localStorage.getItem("input") || "");
     useEffect(() => {
         localStorage.setItem("input", input);

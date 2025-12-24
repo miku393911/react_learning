@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function Q20_TabsObject() {
+export function Q19_TabsObject() {
     const [activeTab, setActiveTab] = useState(1);
     const tabs = [
         { id: 1, label: "タブ1", content: "タブ1の内容です" },

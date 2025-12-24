@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function Q29_Popup() {
+export function Q28_Popup() {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <>

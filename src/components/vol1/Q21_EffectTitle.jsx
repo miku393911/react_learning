@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export function Q22_EffectTitle() {
+export function Q21_EffectTitle() {
     const [count, setCount] = useState(0);
     const totalCount = () => setCount(count + 1);
     useEffect(() => {

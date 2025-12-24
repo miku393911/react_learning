@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export function Q24_EffectTimer() {
+export function Q23_EffectTimer() {
     const [count, setCount] = useState(null);
     useEffect(() => {
         if (count <= 0) return;

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export function Q23_EffectWidth() {
+export function Q22_EffectWidth() {
     const [width, setWidth] = useState(window.innerWidth);
     useEffect(() => {
         const handleResize = () => setWidth(window.innerWidth);
