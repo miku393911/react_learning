@@ -7,12 +7,15 @@ export function Q17_ArticleList() {
         { id: 3, data: "記事3", likes: 0 }
     ]);
     const onClickLike = (id) =>
-        setArticles((prevArticles) => prevArticles.map((article) => article.id === id ? { ...article, likes: article.likes + 1 } : article))
+        setArticles((prevArticles) => prevArticles.map((article) => article.id === id ? { ...article, likes: article.likes + 1 } : article));
     return (
         <>
             <ul>
-                {articles.map((article) => <li key={article.id}>{article.data}<button onClick={() => onClickLike(article.id)}>♡{article.likes}いいね</button></li>)}
+                {articles.map((article) => <li key={article.id}>{article.data}<button onClick={() => onClickLike(article.id)}>♡{article.likes}いいね！</button></li>)}
             </ul>
         </>
     );
 }
+
+/* 最適解
+デフォルトは（何も入れなくても）type="submit"になるので、<button type="button">いいね</button>にすることで純粋なボタンであることを表現*/
