@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 /*export function Q19_TabsObject() {
     const [activeTab, setActiveTab] = useState(1); // タブの選択状態
     const tabs = [
@@ -16,8 +15,7 @@ import { useState } from "react";
         </>
     );
 }*/
-
-export function Q20_TabsArray() {
+export function Q19_TabsObject() {
     const [activeTab, setActiveTab] = useState(0);
     const contents = ["タブ1の内容です", "タブ2の内容です", "タブ3の内容です"];
     return (
@@ -31,6 +29,5 @@ export function Q20_TabsArray() {
         </>
     );
 }
-
 /* 現場向き
 useState()の初期値を、tabs[0].id にすることで常時最初のタブが選択される*/
