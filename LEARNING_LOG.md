@@ -162,6 +162,7 @@
 ### Q16. TODOリスト・追加 (配列のState更新)、TODOリスト・削除 (filterによる削除) 
 **出題内容**: テキストボックスと追加ボタン作成、TODOリストに項目追加。各項目に削除ボタン追加、リストから削除可能
 *   **使用したHooks**: `useState`
+*   **ヒント:** `filter` を使って、削除したいID以外の新しい配列を作ります。
 *   **学んだこと**: .filter()メソッドは新しい配列を作るのでコピー不要ということ
 *   **コードのポイント**:
     ```jsx
@@ -202,5 +203,15 @@
 *   **コードのポイント**:
     ```jsx
     useEffect(() => {document.title = `現在のカウント: ${count}`;}. [count]);
+    ```
+
+### Q21. ウィンドウサイズ監視 (useEffect + Cleanup)
+**出題内容**: ウィンドウサイズをリアルタイムで更新
+*   **Hooks:** `useState`, `useEffect`
+*   **ヒント:** `window.addEventListener` と `removeEventListener`
+*   **学んだこと**: window.InnerWidthというウィンドウの内側の幅を教えるプロパティがあること
+*   **コードのポイント**:
+    ```jsx
+    useState(window.innerWidth);
     ```
 
