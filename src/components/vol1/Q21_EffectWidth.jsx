@@ -5,9 +5,9 @@ export function Q21_EffectWidth() {
     useEffect(() => {
         const handleResize = () => setWidth(window.innerWidth);
         window.addEventListener("resize", handleResize); // resizeというイベントがある（イベント駆動
-        return () => { // クリーンアップ関数はイベントリスナーにも使える
+        return () => { // クリーンアップ関数はイベントリスナーにも使える、イベント削除も必要な作業
             window.removeEventListener("resize", handleResize); 
-        };  // イベント削除も必要な作業
+        };
     }, []);
     return (
         <>
