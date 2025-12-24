@@ -16,24 +16,24 @@ import { Q14_FilterText } from "../components/vol1/Q14_FilterText";
 import { Q15_FindUser } from "../components/vol1/Q15_FindUser";
 import { Q16_TodoList } from "../components/vol1/Q16_TodoList";
 import { Q17_ArticleList } from "../components/vol1/Q17_ArticleList";
-import { Q18_ArticleComponent } from "../components/vol1/Q18_ArticleComponent";
-import { Q19_ShoppingCart } from "../components/vol1/Q19_ShoppingCart";
-import { Q20_TabsObject } from "../components/vol1/Q20_TabsObject";
-import { Q21_TabsArray } from "../components/vol1/Q21_TabsArray";
-import { Q22_EffectTitle } from "../components/vol1/Q22_EffectTitle";
-import { Q23_EffectWidth } from "../components/vol1/Q23_EffectWidth";
-import { Q24_EffectTimer } from "../components/vol1/Q24_EffectTimer";
-import { Q25_EffectStatus } from "../components/vol1/Q25_EffectStatus";
-import { Q26_EffectStorage } from "../components/vol1/Q26_EffectStorage";
-import { Q27_EffectClock } from "../components/vol1/Q27_EffectClock";
-import { Q28_EffectValidation } from "../components/vol1/Q28_EffectValidation";
-import { Q29_Popup } from "../components/vol1/Q29_Popup";
-import { Q30_Quiz } from "../components/vol1/Q30_Quiz";
-import { Q31_UserRegister } from "../components/vol1/Q31_UserRegister";
+import { Q18_ShoppingCart } from "../components/vol1/Q18_ShoppingCart";
+import { Q19_TabsObject } from "../components/vol1/Q19_TabsObject";
+import { Q20_TabsArray } from "../components/vol1/Q20_TabsArray";
+import { Q21_EffectTitle } from "../components/vol1/Q21_EffectTitle";
+import { Q22_EffectWidth } from "../components/vol1/Q22_EffectWidth";
+import { Q23_EffectTimer } from "../components/vol1/Q23_EffectTimer";
+import { Q24_EffectStatus } from "../components/vol1/Q24_EffectStatus";
+import { Q25_EffectStorage } from "../components/vol1/Q25_EffectStorage";
+import { Q26_EffectClock } from "../components/vol1/Q26_EffectClock";
+import { Q27_EffectValidation } from "../components/vol1/Q27_EffectValidation";
+import { Q28_Popup } from "../components/vol1/Q28_Popup";
+import { Q29_Quiz } from "../components/vol1/Q29_Quiz";
+import { Q30_UserRegister } from "../components/vol1/Q30_UserRegister";
 // #endregion
 
-// #region Vol2 (Q32-Q61)
-import { Q32_Favorite } from "../components/vol2/Q32_Favorite.jsx";
+// #region Vol2 (Q31-Q60)
+import { Q31_Favorite } from "../components/vol2/Q31_Favorite.jsx";
+import { Q32_Placeholder } from "../components/vol2/Q32_Placeholder.jsx";
 import { Q33_Placeholder } from "../components/vol2/Q33_Placeholder.jsx";
 import { Q34_Placeholder } from "../components/vol2/Q34_Placeholder.jsx";
 import { Q35_Placeholder } from "../components/vol2/Q35_Placeholder.jsx";
@@ -62,7 +62,6 @@ import { Q57_Placeholder } from "../components/vol2/Q57_Placeholder.jsx";
 import { Q58_Placeholder } from "../components/vol2/Q58_Placeholder.jsx";
 import { Q59_Placeholder } from "../components/vol2/Q59_Placeholder.jsx";
 import { Q60_Placeholder } from "../components/vol2/Q60_Placeholder.jsx";
-import { Q61_Placeholder } from "../components/vol2/Q61_Placeholder.jsx";
 // #endregion
 
 /**
@@ -91,54 +90,53 @@ export const questionList = [
     { id: "Q15", component: Q15_FindUser, label: "Q15: Find User", volume: 1 },
     { id: "Q16", component: Q16_TodoList, label: "Q16: Todo List", volume: 1 },
     { id: "Q17", component: Q17_ArticleList, label: "Q17: Article List", volume: 1 },
-    { id: "Q18", component: Q18_ArticleComponent, label: "Q18: Article Component", volume: 1 },
-    { id: "Q19", component: Q19_ShoppingCart, label: "Q19: Shopping Cart", volume: 1 },
-    { id: "Q20", component: Q20_TabsObject, label: "Q20: Tabs (Object)", volume: 1 },
-    { id: "Q21", component: Q21_TabsArray, label: "Q21: Tabs (Array)", volume: 1 },
-    { id: "Q22", component: Q22_EffectTitle, label: "Q22: Effect Title", volume: 1 },
-    { id: "Q23", component: Q23_EffectWidth, label: "Q23: Effect Width", volume: 1 },
-    { id: "Q24", component: Q24_EffectTimer, label: "Q24: Effect Timer (Countdown)", volume: 1 },
-    { id: "Q25", component: Q25_EffectStatus, label: "Q25: Effect Status", volume: 1 },
-    { id: "Q26", component: Q26_EffectStorage, label: "Q26: Effect Storage", volume: 1 },
-    { id: "Q27", component: Q27_EffectClock, label: "Q27: Effect Clock", volume: 1 },
-    { id: "Q28", component: Q28_EffectValidation, label: "Q28: Effect Validation", volume: 1 },
-    { id: "Q29", component: Q29_Popup, label: "Q29: Popup", volume: 1 },
-    { id: "Q30", component: Q30_Quiz, label: "Q30: Quiz", volume: 1 },
-    { id: "Q31", component: Q31_UserRegister, label: "Q31: User Register (Comprehensive)", volume: 1 },
+    { id: "Q18", component: Q18_ShoppingCart, label: "Q18: Shopping Cart", volume: 1 },
+    { id: "Q19", component: Q19_TabsObject, label: "Q19: Tabs (Object)", volume: 1 },
+    { id: "Q20", component: Q20_TabsArray, label: "Q20: Tabs (Array)", volume: 1 },
+    { id: "Q21", component: Q21_EffectTitle, label: "Q21: Effect Title", volume: 1 },
+    { id: "Q22", component: Q22_EffectWidth, label: "Q22: Effect Width", volume: 1 },
+    { id: "Q23", component: Q23_EffectTimer, label: "Q23: Effect Timer (Countdown)", volume: 1 },
+    { id: "Q24", component: Q24_EffectStatus, label: "Q24: Effect Status", volume: 1 },
+    { id: "Q25", component: Q25_EffectStorage, label: "Q25: Effect Storage", volume: 1 },
+    { id: "Q26", component: Q26_EffectClock, label: "Q26: Effect Clock", volume: 1 },
+    { id: "Q27", component: Q27_EffectValidation, label: "Q27: Effect Validation", volume: 1 },
+    { id: "Q28", component: Q28_Popup, label: "Q28: Popup", volume: 1 },
+    { id: "Q29", component: Q29_Quiz, label: "Q29: Quiz", volume: 1 },
+    { id: "Q30", component: Q30_UserRegister, label: "Q30: User Register (Comprehensive)", volume: 1 },
 
     // Vol2 - Stage 1
-    { id: "Q32", component: Q32_Favorite, label: "Q32: 引数付きイベント(アロー関数)", volume: 2 },
-    { id: "Q33", component: Q33_Placeholder, label: "Q33: 安全な数値計算(型変換)", volume: 2 },
-    { id: "Q34", component: Q34_Placeholder, label: "Q34: 論理演算子による条件表示", volume: 2 },
-    { id: "Q35", component: Q35_Placeholder, label: "Q35: 三項演算子スタイル切替", volume: 2 },
-    { id: "Q36", component: Q36_Placeholder, label: "Q36: 動的文字数カウンター", volume: 2 },
-    { id: "Q37", component: Q37_Placeholder, label: "Q37: 最大値のリアルタイム追跡", volume: 2 },
-    { id: "Q38", component: Q38_Placeholder, label: "Q38: 特定要素のみ色変更", volume: 2 },
-    { id: "Q39", component: Q39_Placeholder, label: "Q39: 配列へのスプレッド追加", volume: 2 },
-    { id: "Q40", component: Q40_Placeholder, label: "Q40: Enterキー操作(KeyDown)", volume: 2 },
-    { id: "Q41", component: Q41_Placeholder, label: "Q41: 配列Stateの全クリア", volume: 2 },
+    { id: "Q31", component: Q31_Favorite, label: "Q31: 引数付きイベント(アロー関数)", volume: 2 },
+    { id: "Q32", component: Q32_Placeholder, label: "Q32: 安全な数値計算(型変換)", volume: 2 },
+    { id: "Q33", component: Q33_Placeholder, label: "Q33: 論理演算子による条件表示", volume: 2 },
+    { id: "Q34", component: Q34_Placeholder, label: "Q34: 三項演算子スタイル切替", volume: 2 },
+    { id: "Q35", component: Q35_Placeholder, label: "Q35: 動的文字数カウンター", volume: 2 },
+    { id: "Q36", component: Q36_Placeholder, label: "Q36: 最大値のリアルタイム追跡", volume: 2 },
+    { id: "Q37", component: Q37_Placeholder, label: "Q37: 特定要素のみ色変更", volume: 2 },
+    { id: "Q38", component: Q38_Placeholder, label: "Q38: 配列へのスプレッド追加", volume: 2 },
+    { id: "Q39", component: Q39_Placeholder, label: "Q39: Enterキー操作(KeyDown)", volume: 2 },
+    { id: "Q40", component: Q40_Placeholder, label: "Q40: 配列Stateの全クリア", volume: 2 },
 
     // Vol2 - Stage 2
-    { id: "Q42", component: Q42_Placeholder, label: "Q42: 配列内項目の特定更新(map)", volume: 2 },
-    { id: "Q43", component: Q43_Placeholder, label: "Q43: キーワードフィルタリング", volume: 2 },
-    { id: "Q44", component: Q44_Placeholder, label: "Q44: オブジェクトState管理", volume: 2 },
-    { id: "Q45", component: Q45_Placeholder, label: "Q45: 連動フォーム(単位変換)", volume: 2 },
-    { id: "Q46", component: Q46_Placeholder, label: "Q46: タブ名連動(useEffect)", volume: 2 },
-    { id: "Q47", component: Q47_Placeholder, label: "Q47: リサイズ監視(クリーンアップ)", volume: 2 },
-    { id: "Q48", component: Q48_Placeholder, label: "Q48: 自動消去メッセージ(タイマー)", volume: 2 },
-    { id: "Q49", component: Q49_Placeholder, label: "Q49: LocalStorageへの保存", volume: 2 },
-    { id: "Q50", component: Q50_Placeholder, label: "Q50: 排他的アコーディオン", volume: 2 },
-    { id: "Q51", component: Q51_Placeholder, label: "Q51: タブ切り替えUI本体", volume: 2 },
+    { id: "Q41", component: Q41_Placeholder, label: "Q41: 配列内項目の特定更新(map)", volume: 2 },
+    { id: "Q42", component: Q42_Placeholder, label: "Q42: キーワードフィルタリング", volume: 2 },
+    { id: "Q43", component: Q43_Placeholder, label: "Q43: オブジェクトState管理", volume: 2 },
+    { id: "Q44", component: Q44_Placeholder, label: "Q44: 連動フォーム(単位変換)", volume: 2 },
+    { id: "Q45", component: Q45_Placeholder, label: "Q45: タブ名連動(useEffect)", volume: 2 },
+    { id: "Q46", component: Q46_Placeholder, label: "Q46: リサイズ監視(クリーンアップ)", volume: 2 },
+    { id: "Q47", component: Q47_Placeholder, label: "Q47: 自動消去メッセージ(タイマー)", volume: 2 },
+    { id: "Q48", component: Q48_Placeholder, label: "Q48: LocalStorageへの保存", volume: 2 },
+    { id: "Q49", component: Q49_Placeholder, label: "Q49: 排他的アコーディオン", volume: 2 },
+    { id: "Q50", component: Q50_Placeholder, label: "Q50: タブ切り替えUI本体", volume: 2 },
 
     // Vol2 - Stage 3
-    { id: "Q52", component: Q52_Placeholder, label: "Q52: 本格バリデーションフォーム", volume: 2 },
-    { id: "Q53", component: Q53_Placeholder, label: "Q53: データのページネーション", volume: 2 },
-    { id: "Q54", component: Q54_Placeholder, label: "Q54: カート内の金額動的計算", volume: 2 },
-    { id: "Q55", component: Q55_Placeholder, label: "Q55: 検索ワードのハイライト", volume: 2 },
-    { id: "Q56", component: Q56_Placeholder, label: "Q56: チェックリストの一括選択", volume: 2 },
-    { id: "Q57", component: Q57_Placeholder, label: "Q57: Z軸を意識したモーダル", volume: 2 },
-    { id: "Q58", component: Q58_Placeholder, label: "Q58: 無限ループスライドショー", volume: 2 },
-    { id: "Q59", component: Q59_Placeholder, label: "Q59: 直近5件の検索履歴", volume: 2 },
-    { id: "Q60", component: Q60_Placeholder, label: "Q60: 外部APIからのfetch取得", volume: 2 },
-    { id: "Q61", component: Q61_Placeholder, label: "Q61: 総まとめタスクボード", volume: 2 },
+    { id: "Q51", component: Q51_Placeholder, label: "Q51: 本格バリデーションフォーム", volume: 2 },
+    { id: "Q52", component: Q52_Placeholder, label: "Q52: データのページネーション", volume: 2 },
+    { id: "Q53", component: Q53_Placeholder, label: "Q53: カート内の金額動的計算", volume: 2 },
+    { id: "Q54", component: Q54_Placeholder, label: "Q54: 検索ワードのハイライト", volume: 2 },
+    { id: "Q55", component: Q55_Placeholder, label: "Q55: チェックリストの一括選択", volume: 2 },
+    { id: "Q56", component: Q56_Placeholder, label: "Q56: Z軸を意識したモーダル", volume: 2 },
+    { id: "Q57", component: Q57_Placeholder, label: "Q57: 無限ループスライドショー", volume: 2 },
+    { id: "Q58", component: Q58_Placeholder, label: "Q58: 直近5件の検索履歴", volume: 2 },
+    { id: "Q59", component: Q59_Placeholder, label: "Q59: 外部APIからのfetch取得", volume: 2 },
+    { id: "Q60", component: Q60_Placeholder, label: "Q60: 総まとめタスクボード", volume: 2 },
 ];
