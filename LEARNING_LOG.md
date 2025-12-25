@@ -282,3 +282,14 @@
     const [isOpen, setIsOpen] = useState(false);
     ```
 
+### Q28. 簡易クイズアプリ (総合)
+**出題内容**: 問題文と選択肢が配列で用意。回答するたびに次に進み、最後に正解数表示
+*   **Hooks:** `useState`
+*   **学んだこと**: 配列のオブジェクト内にさらに配列を書くことができること
+*   **コードのポイント**:
+    ```jsx
+    const tests = [
+        { question: "りんごを英語で何と言う？"; choices: ["Apple", "Banana", "Cat"]; answer: "Apple" },
+    ]
+    ```
+
