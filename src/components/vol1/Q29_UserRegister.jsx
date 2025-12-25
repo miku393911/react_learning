@@ -1,19 +1,19 @@
 import { useState } from "react";
 
-export function Q29_UserRegister() {
-    const [name, setName] = useState("");
-    const [age, setAge] = useState("");
-    const [users, setUsers] = useState([]);
+export function Q29v_UserRegister() {
+    const [name, setName] = useState("");  // 名前の状態管理
+    const [age, setAge] = useState(0);  // 年齢の状態管理
+    const [users, setUsers] = useState([]);  // リストの状態管理
     const onClickAdd = () => {
-        if (name === "" || age === "") return;
-        const newUsers = { id: Math.random(), name: name, age: age };
-        setUsers([...users, newUsers]);
-        setName("");
+        if (name === "" || age === "") return;  // 名前か年齢が空白の時は何もしない
+        const newUsers = { id: Math.random(), name: name, age: age };  // idを付与して新しい配列として変数定義
+        setUsers([...users, newUsers]);  // 登録後リストに追加 
+        setName("");  // 登録後に入力欄を空白に
         setAge("");
     }
     const onClickDelete = (deletedId) => {
-        const newUsers = [...users];
-        setUsers(newUsers.filter((user) => user.id !== deletedId));
+        const newUsers = [...users];  // .filter()メソッドは新しい配列を作るので、この1行のコピー不要
+        setUsers(newUsers.filter((user) => user.id !== deletedId));  // 入力されたidが消したいidと一致しないものだけ残る
     }
     return (
         <>
@@ -34,3 +34,6 @@ export function Q29_UserRegister() {
         </>
     );
 }
+
+/* 現場向き
+id: Date.now(), ame: name.trim(), age: Number(age) にするとより良し */
