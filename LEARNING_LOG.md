@@ -293,3 +293,12 @@
     ]
     ```
 
+### Q29. ユーザー登録と一覧 (総合)
+**出題内容**: 名前と年齢を入力して登録。一覧表示と削除機能も追加
+*   **Hooks:** `useState`
+*   **学んだこと**: id名をDate.now()にすると、より被りにくい一意のidを作成できること
+*   **コードのポイント**:
+    ```jsx
+    const newUsers = {id: Date.now(), name: name.trim(), age: Number(age)};
+    ```
+
