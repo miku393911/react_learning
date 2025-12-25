@@ -233,3 +233,12 @@
     useEffect(() => {const timer = setTimeout(() => { /* 以下、コンポーネントの処理が続く*/}}));
     ```
 
+### Q24. 自動保存メモ帳 (useEffect)
+**出題内容**: テキスト入力後、画面をリロードしても内容が消えない
+*   **Hooks:** `useState`, `useEffect`
+*   **学んだこと**: ブラウザにデータを保存できる`localStorage`というプロパティがあること
+*   **コードのポイント**:
+    ```jsx
+    const [input, setInput] = useState(localStorage.getItem("input") || "");
+    ```
+
