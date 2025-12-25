@@ -273,3 +273,12 @@
     <input type="password" value={} onChange={}> // 以下、エラーメッセージの条件分岐が続く  
     ```
 
+### Q27. モーダルウィンドウ (総合)
+**出題内容**: 開くボタンでモーダル（ポップアップ）表示、閉じるボタンで閉じる
+*   **Hooks:** `useState`
+*   **学んだこと**: useState()の初期値に、真偽値を設定することができる
+*   **コードのポイント**:
+    ```jsx
+    const [isOpen, setIsOpen] = useState(false);
+    ```
+
