@@ -109,7 +109,10 @@
     * 関数の条件分岐としてswitch文を使うこと/ <input type="number">であっても文字のため、数値としての型合わせが必要
 *   **コードのポイント**:
     ```jsx
-    switch(operator){case "+": result = l + r; break; /*以下switch文のcaseが続く*/ }
+    switch(operator){
+        case "+": result = l + r; break; 
+        /*以下switch文のcaseが続く*/ 
+    }
      ```
 
 ## Part 2: 配列とコールバック
@@ -147,11 +150,13 @@
 *   **学んだこと**: 検索対象が空の時の処理と検索結果が0件の処理（メッセージ表記）が必要だということ
 *   **コードのポイント**:
     ```jsx
-    const newText = text.trim() === "" ? userDate : userDate.filter((user) => user.name.toLowerCase().includes(text.toLowerCase().trim()));
+    const newText = text.trim() === "" ? 
+        userDate : 
+        userDate.filter((user) => user.name.toLowerCase().includes(text.toLowerCase().trim()));
      ```
 
 ### Q15. 特定のユーザーを探す (find)
-**出題内容**: ID入力後、検索ボタン押す -> 該当IDのユーザー名表示、見つからない場合は「見つかりません」と表示
+**出題内容**: ID入力後、検索ボタン押す。該当IDのユーザー名表示、見つからない場合は「見つかりません」と表示
 *   **使用したHooks**: `useState`
 *   **学んだこと**: 条件分岐が3個以上ある場合や関数内に書く場合はif文を用いるということ/ `return`内は三項演算子
 *   **コードのポイント**:
@@ -230,7 +235,11 @@
 *   **学んだこと**: `setTimeout()`は、一定時間経過後、1度だけ処理を実行する関数ということ
 *   **コードのポイント**:
     ```jsx
-    useEffect(() => {const timer = setTimeout(() => { /* 以下、コンポーネントの処理が続く*/}}));
+    useEffect(() => {
+        const timer = setTimeout(() => {
+             /* 以下、コンポーネントの処理が続く*/
+        }}
+    ));
     ```
 
 ### Q24. 自動保存メモ帳 (useEffect)
@@ -240,5 +249,18 @@
 *   **コードのポイント**:
     ```jsx
     const [input, setInput] = useState(localStorage.getItem("input") || "");
+    ```
+
+### Q25. リアルタイム時計
+**出題内容**: 現在の時刻（時:分:秒）を1秒ごとに更新する時計作成
+*   **Hooks:** `useState`, `useEffect`
+*   **学んだこと**: 現在の時刻や月を表すコンストラクタ（`new Date()`）があること
+*   **コードのポイント**:
+    ```jsx
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCount(new Date().toLocalTimeString())
+        })
+    })
     ```
 
