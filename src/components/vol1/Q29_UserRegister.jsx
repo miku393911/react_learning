@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function Q29v_UserRegister() {
+export function Q29_UserRegister() {
     const [name, setName] = useState("");  // 名前の状態管理
     const [age, setAge] = useState(0);  // 年齢の状態管理
     const [users, setUsers] = useState([]);  // リストの状態管理
