@@ -18,9 +18,9 @@ export function Q14_FilterText() {
     );
 }
 
-//現場向き
-//Q13同様、静的データは関数外に配置し配列をコピーして新しい変数を作りidを付与する + .trim()も追加し入力欄に空白が入った際の処理もする
-// 検索対象が空の場合の処理
+/*現場向き
+Q13同様、静的データは関数外に配置し配列をコピーして新しい変数を作りidを付与する + .trim()も追加し入力欄に空白が入った際の処理もする
+検索対象が空の場合の処理
 const newText = text.trim() === "" ? userDate : userDate.filter((user) => user.name.toLowerCase().includes(text.toLowerCase().trim()))
-//検索結果が0の時の処理
-newText.length > 0 ? (<ul>{filterUsers.map((user) => <li key={user.name}>{user.name}</li>)}</ul>) : (<p>"該当するユーザーは見つかりませんでした"</p>)
+検索結果が0の時の処理
+newText.length > 0 ? (<ul>{filterUsers.map((user) => <li key={user.name}>{user.name}</li>)}</ul>) : (<p>"該当するユーザーは見つかりませんでした"</p>)*/
