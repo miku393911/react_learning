@@ -3,7 +3,7 @@
 複数のボタン（例: ID 1, 2, 3）を用意し、それぞれクリック時に異なるIDが表示されるようにしてください。
 *   **狙い:** なぜ `onClick={() => handleClick(id)}` と書く必要があるのかを完璧に理解する。*/
 
-export function Q31_EventHandler() { 
+export function Q31_EventHandler() {
     const handleClick = (id) => {
         console.log(id);
     }
@@ -12,6 +12,6 @@ export function Q31_EventHandler() {
             <button id="1" onClick={() => handleClick(1)}>ボタン1</button>
             <button id="2" onClick={() => handleClick(2)}>ボタン2</button>
             <button id="3" onClick={() => handleClick(3)}>ボタン3</button>
-        </> 
+        </>
     ) // ボタンが押された際、idの値を引数にして、handleClick関数を実行する
 }
