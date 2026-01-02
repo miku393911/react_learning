@@ -39,8 +39,8 @@ import { Q34_Color } from "../components/vol2/Q34_Color";
 import { Q35_ValueLength } from "../components/vol2/Q35_ValueLength";
 import { Q36_MathMax } from "../components/vol2/Q36_MathMax";
 import { Q37_ClickButton } from "../components/vol2/Q37_ClickButton";
-import { Q38_Placeholder } from "../components/vol2/Q38_Placeholder";
-import { Q39_Placeholder } from "../components/vol2/Q39_Placeholder";
+import { Q38_TextboxAdd } from "../components/vol2/Q38_TextboxAdd";
+import { Q39_InputOnKeyDown } from "../components/vol2/Q39_InputOnKeyDown";
 import { Q40_Placeholder } from "../components/vol2/Q40_Placeholder";
 import { Q41_Placeholder } from "../components/vol2/Q41_Placeholder";
 import { Q42_Placeholder } from "../components/vol2/Q42_Placeholder";
@@ -112,8 +112,8 @@ export const questionList = [
     { id: "Q35", component: Q35_ValueLength, label: "Q35: Value Length", volume: 2 },
     { id: "Q36", component: Q36_MathMax, label: "Q36: Math Max", volume: 2 },
     { id: "Q37", component: Q37_ClickButton, label: "Q37: Click Button", volume: 2 },
-    { id: "Q38", component: Q38_Placeholder, label: "Q38: 配列へのスプレッド追加", volume: 2 },
-    { id: "Q39", component: Q39_Placeholder, label: "Q39: Enterキー操作(KeyDown)", volume: 2 },
+    { id: "Q38", component: Q38_TextboxAdd, label: "Q38: Textbox Add", volume: 2 },
+    { id: "Q39", component: Q39_InputOnKeyDown, label: "Q39: Input OnKeyDown", volume: 2 },
     { id: "Q40", component: Q40_Placeholder, label: "Q40: 配列Stateの全クリア", volume: 2 },
 
     // Vol2 - Stage 2
