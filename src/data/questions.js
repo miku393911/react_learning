@@ -41,7 +41,7 @@ import { Q36_MathMax } from "../components/vol2/Q36_MathMax";
 import { Q37_ClickButton } from "../components/vol2/Q37_ClickButton";
 import { Q38_TextboxAdd } from "../components/vol2/Q38_TextboxAdd";
 import { Q39_InputOnKeyDown } from "../components/vol2/Q39_InputOnKeyDown";
-import { Q40_Placeholder } from "../components/vol2/Q40_Placeholder";
+import { Q40_AllListRemoved } from "../components/vol2/Q40_AllListRemoved";
 import { Q41_Placeholder } from "../components/vol2/Q41_Placeholder";
 import { Q42_Placeholder } from "../components/vol2/Q42_Placeholder";
 import { Q43_Placeholder } from "../components/vol2/Q43_Placeholder";
@@ -114,7 +114,7 @@ export const questionList = [
     { id: "Q37", component: Q37_ClickButton, label: "Q37: Click Button", volume: 2 },
     { id: "Q38", component: Q38_TextboxAdd, label: "Q38: Textbox Add", volume: 2 },
     { id: "Q39", component: Q39_InputOnKeyDown, label: "Q39: Input OnKeyDown", volume: 2 },
-    { id: "Q40", component: Q40_Placeholder, label: "Q40: 配列Stateの全クリア", volume: 2 },
+    { id: "Q40", component: Q40_AllListRemoved, label: "Q40: All List Removed", volume: 2 },
 
     // Vol2 - Stage 2
     { id: "Q41", component: Q41_Placeholder, label: "Q41: 配列内項目の特定更新(map)", volume: 2 },
