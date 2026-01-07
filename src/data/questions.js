@@ -42,7 +42,7 @@ import { Q37_ClickButton } from "../components/vol2/Q37_ClickButton";
 import { Q38_TextboxAdd } from "../components/vol2/Q38_TextboxAdd";
 import { Q39_InputOnKeyDown } from "../components/vol2/Q39_InputOnKeyDown";
 import { Q40_AllListRemoved } from "../components/vol2/Q40_AllListRemoved";
-import { Q41_Placeholder } from "../components/vol2/Q41_Placeholder";
+import { Q41_TodoDecoration } from "../components/vol2/Q41_TodoDecoration";
 import { Q42_Placeholder } from "../components/vol2/Q42_Placeholder";
 import { Q43_Placeholder } from "../components/vol2/Q43_Placeholder";
 import { Q44_Placeholder } from "../components/vol2/Q44_Placeholder";
@@ -117,7 +117,7 @@ export const questionList = [
     { id: "Q40", component: Q40_AllListRemoved, label: "Q40: All List Removed", volume: 2 },
 
     // Vol2 - Stage 2
-    { id: "Q41", component: Q41_Placeholder, label: "Q41: 配列内項目の特定更新(map)", volume: 2 },
+    { id: "Q41", component: Q41_TodoDecoration, label: "Q41: Todo Decoration", volume: 2 },
     { id: "Q42", component: Q42_Placeholder, label: "Q42: キーワードフィルタリング", volume: 2 },
     { id: "Q43", component: Q43_Placeholder, label: "Q43: オブジェクトState管理", volume: 2 },
     { id: "Q44", component: Q44_Placeholder, label: "Q44: 連動フォーム(単位変換)", volume: 2 },
