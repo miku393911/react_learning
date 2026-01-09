@@ -45,7 +45,7 @@ import { Q40_AllListRemoved } from "../components/vol2/Q40_AllListRemoved";
 import { Q41_TodoDecoration } from "../components/vol2/Q41_TodoDecoration";
 import { Q42_DataIncludes} from "../components/vol2/Q42_DataIncludes";
 import { Q43_ObjectName } from "../components/vol2/Q43_ObjectName";
-import { Q44_Placeholder } from "../components/vol2/Q44_Placeholder";
+import { Q44_InputTransform } from "../components/vol2/Q44_InputTransform";
 import { Q45_Placeholder } from "../components/vol2/Q45_Placeholder";
 import { Q46_Placeholder } from "../components/vol2/Q46_Placeholder";
 import { Q47_Placeholder } from "../components/vol2/Q47_Placeholder";
@@ -120,7 +120,7 @@ export const questionList = [
     { id: "Q41", component: Q41_TodoDecoration, label: "Q41: Todo Decoration", volume: 2 },
     { id: "Q42", component: Q42_DataIncludes, label: "Q42: Data Includes", volume: 2 },
     { id: "Q43", component: Q43_ObjectName, label: "Q43: Object Name", volume: 2 },
-    { id: "Q44", component: Q44_Placeholder, label: "Q44: 連動フォーム(単位変換)", volume: 2 },
+    { id: "Q44", component: Q44_InputTransform, label: "Q44:Input Transform", volume: 2 },
     { id: "Q45", component: Q45_Placeholder, label: "Q45: タブ名連動(useEffect)", volume: 2 },
     { id: "Q46", component: Q46_Placeholder, label: "Q46: リサイズ監視(クリーンアップ)", volume: 2 },
     { id: "Q47", component: Q47_Placeholder, label: "Q47: 自動消去メッセージ(タイマー)", volume: 2 },
