@@ -10,7 +10,7 @@ export function Q46_WindowSize() {
         const newWidth = () => setWidth(window.innerWidth);  // 初期値を設定した関数を変数定義
         window.addEventListener("resize", newWidth);  // イベント駆動を使う
         return () => window.removeEventListener("resize", newWidth);  // クリーンアップ関数を書く（イベント駆動にはremove
-    }, [width])
+    }, []);  // 依存配列を空配列にすることで、コンポーネント表示時に1回表示、消える時に解除（[width]だとカウントごとにコンポーネント
     return (
         <>
             現在のウィンドウ幅: {width}
