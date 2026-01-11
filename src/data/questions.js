@@ -51,7 +51,7 @@ import { Q46_WindowSize } from "../components/vol2/Q46_WindowSize";
 import { Q47_TimeStatus } from "../components/vol2/Q47_TimeStatus";
 import { Q48_LocalStorage } from "../components/vol2/Q48_LocalStorage";
 import { Q49_ActiveStatus } from "../components/vol2/Q49_ActiveStatus";
-import { Q50_Placeholder } from "../components/vol2/Q50_Placeholder";
+import { Q50_TabSelect } from "../components/vol2/Q50_TabSelect";
 import { Q51_Placeholder } from "../components/vol2/Q51_Placeholder";
 import { Q52_Placeholder } from "../components/vol2/Q52_Placeholder";
 import { Q53_Placeholder } from "../components/vol2/Q53_Placeholder";
@@ -126,7 +126,7 @@ export const questionList = [
     { id: "Q47", component: Q47_TimeStatus, label: "Q47: Time Status", volume: 2 },
     { id: "Q48", component: Q48_LocalStorage, label: "Q48: LocalStorage", volume: 2 },
     { id: "Q49", component: Q49_ActiveStatus, label: "Q49: Active Status", volume: 2 },
-    { id: "Q50", component: Q50_Placeholder, label: "Q50: タブ切り替えUI本体", volume: 2 },
+    { id: "Q50", component: Q50_TabSelect, label: "Q50: Tab Select", volume: 2 },
 
     // Vol2 - Stage 3
     { id: "Q51", component: Q51_Placeholder, label: "Q51: 本格バリデーションフォーム", volume: 2 },
