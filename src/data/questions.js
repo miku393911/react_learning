@@ -47,8 +47,8 @@ import { Q42_DataIncludes} from "../components/vol2/Q42_DataIncludes";
 import { Q43_ObjectName } from "../components/vol2/Q43_ObjectName";
 import { Q44_InputTransform } from "../components/vol2/Q44_InputTransform";
 import { Q45_CountDocumentTitle } from "../components/vol2/Q45_CountDocumentTitle";
-import { Q46_WindowSize } from "../components/vol2/Q46_WindowSiza";
-import { Q47_Placeholder } from "../components/vol2/Q47_Placeholder";
+import { Q46_WindowSize } from "../components/vol2/Q46_WindowSize";
+import { Q47_TimeStatus } from "../components/vol2/Q47_TimeStatus";
 import { Q48_Placeholder } from "../components/vol2/Q48_Placeholder";
 import { Q49_Placeholder } from "../components/vol2/Q49_Placeholder";
 import { Q50_Placeholder } from "../components/vol2/Q50_Placeholder";
@@ -123,7 +123,7 @@ export const questionList = [
     { id: "Q44", component: Q44_InputTransform, label: "Q44:Input Transform", volume: 2 },
     { id: "Q45", component: Q45_CountDocumentTitle, label: "Q45: Count Document Title", volume: 2 },
     { id: "Q46", component: Q46_WindowSize, label: "Q46: Window Size", volume: 2 },
-    { id: "Q47", component: Q47_Placeholder, label: "Q47: 自動消去メッセージ(タイマー)", volume: 2 },
+    { id: "Q47", component: Q47_TimeStatus, label: "Q47: Time Status", volume: 2 },
     { id: "Q48", component: Q48_Placeholder, label: "Q48: LocalStorageへの保存", volume: 2 },
     { id: "Q49", component: Q49_Placeholder, label: "Q49: 排他的アコーディオン", volume: 2 },
     { id: "Q50", component: Q50_Placeholder, label: "Q50: タブ切り替えUI本体", volume: 2 },
