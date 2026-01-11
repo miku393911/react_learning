@@ -49,7 +49,7 @@ import { Q44_InputTransform } from "../components/vol2/Q44_InputTransform";
 import { Q45_CountDocumentTitle } from "../components/vol2/Q45_CountDocumentTitle";
 import { Q46_WindowSize } from "../components/vol2/Q46_WindowSize";
 import { Q47_TimeStatus } from "../components/vol2/Q47_TimeStatus";
-import { Q48_Placeholder } from "../components/vol2/Q48_Placeholder";
+import { Q48_LocalStorage } from "../components/vol2/Q48_LocalStorage";
 import { Q49_Placeholder } from "../components/vol2/Q49_Placeholder";
 import { Q50_Placeholder } from "../components/vol2/Q50_Placeholder";
 import { Q51_Placeholder } from "../components/vol2/Q51_Placeholder";
@@ -124,7 +124,7 @@ export const questionList = [
     { id: "Q45", component: Q45_CountDocumentTitle, label: "Q45: Count Document Title", volume: 2 },
     { id: "Q46", component: Q46_WindowSize, label: "Q46: Window Size", volume: 2 },
     { id: "Q47", component: Q47_TimeStatus, label: "Q47: Time Status", volume: 2 },
-    { id: "Q48", component: Q48_Placeholder, label: "Q48: LocalStorageへの保存", volume: 2 },
+    { id: "Q48", component: Q48_LocalStorage, label: "Q48: LocalStorage", volume: 2 },
     { id: "Q49", component: Q49_Placeholder, label: "Q49: 排他的アコーディオン", volume: 2 },
     { id: "Q50", component: Q50_Placeholder, label: "Q50: タブ切り替えUI本体", volume: 2 },
 
