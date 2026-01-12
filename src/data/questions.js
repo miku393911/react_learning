@@ -53,8 +53,8 @@ import { Q48_LocalStorage } from "../components/vol2/Q48_LocalStorage";
 import { Q49_ActiveStatus } from "../components/vol2/Q49_ActiveStatus";
 import { Q50_TabSelect } from "../components/vol2/Q50_TabSelect";
 import { Q51_MailAndPassword } from "../components/vol2/Q51_MailAndPassword";
-import { Q52_Placeholder } from "../components/vol2/Q52_Placeholder";
-import { Q53_Placeholder } from "../components/vol2/Q53_Placeholder";
+import { Q52_PopUpWindow } from "../components/vol2/Q52_PopUpWindow";
+import { Q53_CheckList } from "../components/vol2/Q53_CheckList";
 import { Q54_Placeholder } from "../components/vol2/Q54_Placeholder";
 import { Q55_Placeholder } from "../components/vol2/Q55_Placeholder";
 import { Q56_Placeholder } from "../components/vol2/Q56_Placeholder";
@@ -130,8 +130,8 @@ export const questionList = [
 
     // Vol2 - Stage 3
     { id: "Q51", component: Q51_MailAndPassword, label: "Q51: Mail and Password", volume: 2 },
-    { id: "Q52", component: Q52_Placeholder, label: "Q52: データのページネーション", volume: 2 },
-    { id: "Q53", component: Q53_Placeholder, label: "Q53: カート内の金額動的計算", volume: 2 },
+    { id: "Q52", component: Q52_PopUpWindow, label: "Q52: PopUp Window", volume: 2 },
+    { id: "Q53", component: Q53_CheckList, label: "Q53: Check List", volume: 2 },
     { id: "Q54", component: Q54_Placeholder, label: "Q54: 検索ワードのハイライト", volume: 2 },
     { id: "Q55", component: Q55_Placeholder, label: "Q55: チェックリストの一括選択", volume: 2 },
     { id: "Q56", component: Q56_Placeholder, label: "Q56: Z軸を意識したモーダル", volume: 2 },
