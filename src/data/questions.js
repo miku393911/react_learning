@@ -56,7 +56,7 @@ import { Q51_MailAndPassword } from "../components/vol2/Q51_MailAndPassword";
 import { Q52_PopUpWindow } from "../components/vol2/Q52_PopUpWindow";
 import { Q53_CheckList } from "../components/vol2/Q53_CheckList";
 import { Q54_InputTextList } from "../components/vol2/Q54_InputTextList";
-import { Q55_Placeholder } from "../components/vol2/Q55_Placeholder";
+import { Q55_HistoryList } from "../components/vol2/Q55_HistoryList";
 import { Q56_Placeholder } from "../components/vol2/Q56_Placeholder";
 import { Q57_Placeholder } from "../components/vol2/Q57_Placeholder";
 import { Q58_Placeholder } from "../components/vol2/Q58_Placeholder";
@@ -133,7 +133,7 @@ export const questionList = [
     { id: "Q52", component: Q52_PopUpWindow, label: "Q52: PopUp Window", volume: 2 },
     { id: "Q53", component: Q53_CheckList, label: "Q53: Check List", volume: 2 },
     { id: "Q54", component: Q54_InputTextList, label: "Q54: Input Text List", volume: 2 },
-    { id: "Q55", component: Q55_Placeholder, label: "Q55: チェックリストの一括選択", volume: 2 },
+    { id: "Q55", component: Q55_HistoryList, label: "Q55: History List", volume: 2 },
     { id: "Q56", component: Q56_Placeholder, label: "Q56: Z軸を意識したモーダル", volume: 2 },
     { id: "Q57", component: Q57_Placeholder, label: "Q57: 無限ループスライドショー", volume: 2 },
     { id: "Q58", component: Q58_Placeholder, label: "Q58: 直近5件の検索履歴", volume: 2 },
