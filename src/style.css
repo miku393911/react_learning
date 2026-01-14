@@ -15,11 +15,11 @@ input {
   margin: 5px;
   padding: 5px;
 }
-
+/* Q55が <li> の履歴リストで箇条書き形式のため、コメントアウトして対応
 ul {
   list-style-type: none;
   padding: 0;
-}
+}*/
 
 li {
   margin: 5px 0;
